@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#fbf7e8">
+<title>Mochi — Pocket Artificer & Starlight Craftsman</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=optional" rel="stylesheet">
+<style>
+:root{--cream:#fff8f1;--paper:#fffdf9;--berry:#a34063;--berry-dark:#76334d;--ink:#513b37;--muted:#927a71;--peach:#f4c5a5;--gold:#f2c66d;--sage:#b4c9ae;--lilac:#d9c9e8;--shadow:0 22px 70px #7a4b3415;--night:#242238;--night-paper:#302c46;--night-ink:#fbecda}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;transition:background .5s,color .5s;overflow-x:hidden}body.night{background:var(--night);color:var(--night-ink);--paper:var(--night-paper);--ink:var(--night-ink);--muted:#c3b3c4;--shadow:0 22px 70px #07061555}button,a{font:inherit;color:inherit}button{cursor:pointer}.shell{width:min(1160px,calc(100% - 48px));margin:auto}.topbar{height:74px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #a3406318}.brand{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:-.04em}.brand-mark{width:36px;height:36px;border-radius:50%;background:linear-gradient(145deg,#f8d9c2,#efb38f);display:grid;place-items:center;box-shadow:inset -4px -5px 8px #b86e4930,0 5px 12px #b86e4925;font-size:19px}.nav{display:flex;gap:26px;align-items:center;font-size:13px;color:var(--muted)}.nav a{text-decoration:none}.nav a:hover{color:var(--berry)}.mode{border:1px solid #a3406325;border-radius:99px;background:var(--paper);padding:9px 13px;font-size:12px;color:var(--ink)}.hero{min-height:620px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:38px;padding:52px 0 70px;position:relative}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--berry);font-weight:700;letter-spacing:.11em;text-transform:uppercase;font-size:10px}.eyebrow:before{content:'';width:7px;height:7px;background:#df9d76;border-radius:50%;box-shadow:0 0 0 4px #df9d7622}.hero h1{font:600 clamp(52px,7vw,88px)/.98 Fraunces,serif;letter-spacing:-.055em;margin:21px 0;color:var(--berry-dark)}body.night .hero h1{color:#ffd9ca}.hero h1 span{font-style:italic;color:#c17c68}.lead{max-width:430px;color:var(--muted);line-height:1.8;font-size:15px}.actions{display:flex;gap:12px;margin:28px 0 0;align-items:center}.primary,.secondary{border:0;border-radius:99px;padding:14px 20px;text-decoration:none;font-size:13px;font-weight:700;transition:transform .2s,box-shadow .2s}.primary{background:var(--berry);color:white;box-shadow:0 8px 22px #a3406333}.secondary{background:#fff0e5;color:var(--berry-dark)}body.night .secondary{background:#44394c;color:#f5d5c6}.primary:hover,.secondary:hover{transform:translateY(-3px);box-shadow:0 10px 24px #a3406333}.tiny-note{margin-top:23px;color:var(--muted);font-size:11px}.scene{height:470px;display:grid;place-items:center;position:relative;perspective:950px}.halo{position:absolute;width:370px;height:370px;border-radius:50%;background:radial-gradient(circle,#ffe7ba 0,#f7d4c2 44%,#ecd8e7 72%,transparent 73%);filter:blur(1px);opacity:.8}.stars{position:absolute;inset:0;color:#c28b5b}.star{position:absolute;font-size:19px;animation:twinkle 3s ease-in-out infinite}.star:nth-child(1){left:18%;top:20%}.star:nth-child(2){right:17%;top:27%;animation-delay:.7s}.star:nth-child(3){left:24%;bottom:24%;animation-delay:1.2s}.star:nth-child(4){right:24%;bottom:22%;animation-delay:1.7s}@keyframes twinkle{50%{transform:scale(.72) rotate(18deg);opacity:.5}}.cloud{position:absolute;bottom:59px;width:370px;height:94px;background:linear-gradient(170deg,#fffefa,#f4ddd1);border-radius:55px;box-shadow:0 22px 35px #82594b25,inset 0 -10px 16px #e9c9ba60}.cloud:before,.cloud:after{content:'';position:absolute;background:inherit;border-radius:50%;box-shadow:inset 0 -7px 12px #e9c9ba55}.cloud:before{width:155px;height:125px;left:38px;top:-52px}.cloud:after{width:178px;height:145px;right:37px;top:-68px}.character{position:relative;z-index:2;width:258px;height:315px;transform-style:preserve-3d;transition:transform .18s ease-out;animation:bob 4s ease-in-out infinite;filter:drop-shadow(0 22px 18px #85513c35)}@keyframes bob{50%{translate:0 -10px}}.tail{position:absolute;z-index:-1;width:106px;height:135px;border-radius:65% 45% 60% 60%;background:repeating-linear-gradient(135deg,#cb7656 0 17px,#f1c59e 17px 32px);right:-7px;bottom:22px;transform:rotate(-27deg);box-shadow:inset -9px -8px 15px #783c3040}.bodyfur{position:absolute;bottom:0;left:37px;width:192px;height:166px;border-radius:49% 49% 45% 45%;background:radial-gradient(ellipse at 50% 30%,#f8d7b6,#d88763 65%,#b75f4f);box-shadow:inset -18px -12px 24px #974b4530,inset 10px 8px 18px #fff2dc70}.belly{position:absolute;left:50px;bottom:13px;width:92px;height:113px;border-radius:55% 55% 48% 48%;background:linear-gradient(145deg,#fff0d8,#eecba9);transform:rotate(10deg)}.head{position:absolute;left:32px;top:37px;width:196px;height:190px;border-radius:48% 48% 45% 45%;background:radial-gradient(ellipse at 42% 27%,#f9d8b8 0,#edb58d 55%,#d98163 100%);box-shadow:inset -13px -12px 22px #a34f4530,inset 9px 9px 17px #fff1d27c}.ear{position:absolute;top:-15px;width:66px;height:74px;border-radius:52% 52% 45% 45%;background:linear-gradient(145deg,#d78668,#b95f54);box-shadow:inset 0 0 0 12px #f2c9ab,inset 0 0 0 20px #e9a98c}.ear.left{left:1px;transform:rotate(-21deg)}.ear.right{right:1px;transform:rotate(21deg)}.mask{position:absolute;width:81px;height:79px;border-radius:50%;background:linear-gradient(145deg,#fff0dc,#e9c19c);top:64px;left:-8px;transform:rotate(-12deg);box-shadow:0 3px 9px #954b4030}.mask.right{left:auto;right:-8px;transform:rotate(12deg)}.eye{position:absolute;width:14px;height:18px;border-radius:50%;background:#493633;top:93px;left:28px;z-index:2;box-shadow:2px 2px 0 #fff}.eye.right{left:auto;right:28px}.muzzle{position:absolute;left:50%;top:106px;translate:-50% 0;width:61px;height:42px;border-radius:50%;background:#fff0dc;z-index:2;box-shadow:inset 0 -4px 6px #e2b89850}.nose{position:absolute;left:50%;top:112px;translate:-50%;width:13px;height:9px;border-radius:55% 55% 65% 65%;background:#64413b;z-index:3}.smile{position:absolute;left:50%;top:126px;translate:-50%;font:18px Fraunces;color:#7d4c47;z-index:3}.cheek{position:absolute;top:122px;left:17px;width:30px;height:14px;border-radius:50%;background:#e88e85a8;filter:blur(4px);z-index:2}.cheek.right{left:auto;right:17px}.cap{position:absolute;left:50%;top:-27px;translate:-50%;width:143px;height:73px;border-radius:70% 70% 18% 18%;background:linear-gradient(150deg,#a84768,#76364f);z-index:4;transform:rotate(-5deg);box-shadow:inset 0 -8px 10px #582f4440}.cap:after{content:'';position:absolute;width:23px;height:23px;border-radius:50%;background:#f1c66e;right:-9px;top:-12px;box-shadow:0 0 18px #f5cb76}.capstar{position:absolute;z-index:5;color:#ffe7ae;font-size:16px;top:-13px;left:41%}.scarf{position:absolute;z-index:4;left:46px;top:204px;width:168px;height:24px;background:linear-gradient(#a34063,#8a3859);border-radius:50%;box-shadow:inset 0 -5px 6px #54294030}.scarf:after{content:'';position:absolute;width:24px;height:54px;background:#a34063;left:120px;top:8px;border-radius:0 0 12px 12px;transform:rotate(-12deg)}.lantern{position:absolute;z-index:5;width:52px;height:68px;border-radius:48% 48% 42% 42%;bottom:87px;left:2px;background:radial-gradient(ellipse at 50% 44%,#fff8ce,#f5bd68 57%,#bd7a48);border:3px solid #b27b56;box-shadow:0 0 36px #ffdb84b8}.lantern:before{content:'';position:absolute;width:22px;height:15px;border:3px solid #b27b56;border-bottom:0;border-radius:20px 20px 0 0;top:-17px;left:12px}.badge{position:absolute;right:0;top:77px;padding:11px 14px;background:#fffdf8;border:1px solid #eed9c8;border-radius:16px;font-size:11px;color:var(--berry-dark);box-shadow:var(--shadow);transform:rotate(4deg)}.badge b{display:block;font-size:12px;margin-bottom:3px}.section{padding:92px 0}.section-head{max-width:600px;margin-bottom:32px}.section h2{font:600 clamp(36px,5vw,56px)/1.05 Fraunces,serif;letter-spacing:-.04em;margin:13px 0;color:var(--berry-dark)}body.night .section h2{color:#ffd9ca}.section-head p{line-height:1.75;color:var(--muted);font-size:14px}.work{background:var(--paper);border-radius:38px;padding:54px;box-shadow:var(--shadow)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{min-height:235px;background:#fff7ef;border:1px solid #f1e2d5;border-radius:23px;padding:22px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}body.night .card{background:#39334f;border-color:#4b425d}.card:hover{transform:translateY(-6px) rotate(-.5deg);box-shadow:0 16px 35px #774d381c}.card-visual{width:69px;height:69px;border-radius:22px;display:grid;place-items:center;font-size:33px;margin-bottom:27px;background:linear-gradient(145deg,#fbe5cd,#e9b995);box-shadow:inset -7px -7px 12px #ab614020,0 8px 15px #ab61401c}.card:nth-child(2) .card-visual{background:linear-gradient(145deg,#e8ddf1,#cbb7df)}.card:nth-child(3) .card-visual{background:linear-gradient(145deg,#e3efd9,#b5caa9)}.card h3{font:600 22px Fraunces;margin:0 0 8px}.card p{color:var(--muted);line-height:1.65;font-size:12px;margin:0;max-width:270px}.card .index{position:absolute;right:19px;top:20px;color:#bca99e;font-size:10px}.story-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:54px;align-items:center}.story-art{min-height:350px;border-radius:34px;background:radial-gradient(circle at 60% 45%,#f8dbaf,#f0c8c5 50%,#e3d8e8 86%);display:grid;place-items:center;position:relative;overflow:hidden}.moon{position:absolute;width:210px;height:210px;border-radius:50%;background:#fff1cf;box-shadow:0 0 85px #fff4ca}.mini-mallow{position:relative;z-index:1;scale:.73;translate:0 28px}.story-copy .step{color:var(--berry);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.story-copy h2{font:600 43px/1.05 Fraunces;margin:16px 0}.story-copy p{color:var(--muted);line-height:1.85;font-size:14px}.dots{display:flex;gap:8px;margin-top:24px}.dots button{border:0;width:9px;height:9px;border-radius:50%;background:#dfc8bb;padding:0}.dots button.active{background:var(--berry);width:25px;border-radius:20px}.poem{padding:68px 30px;text-align:center;background:linear-gradient(135deg,#f8e9db,#f5dce2 55%,#ede5f0);border-radius:35px;margin:10px 0 80px}.poem .eyebrow{justify-content:center}.poem h2{font:600 38px Fraunces;color:var(--berry-dark);margin:15px 0 8px}.blank{width:min(520px,90%);height:78px;margin:22px auto 0;border-bottom:1px dashed #b77d7c55}.footer{border-top:1px solid #a3406318;padding:28px 0 45px;display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.sound{border:1px solid #a3406325;background:var(--paper);color:var(--ink);border-radius:99px;padding:9px 13px;font-size:12px}.egg{position:fixed;bottom:16px;right:16px;background:var(--paper);border:1px solid #a3406322;border-radius:50%;width:40px;height:40px;box-shadow:var(--shadow);font-size:17px;opacity:.8}.toast{position:fixed;left:50%;bottom:26px;translate:-50% 20px;background:#573544;color:white;padding:13px 18px;border-radius:99px;font-size:12px;opacity:0;transition:.3s;pointer-events:none;z-index:9}.toast.show{opacity:1;translate:-50% 0}.spark{position:fixed;pointer-events:none;color:#d69d58;z-index:20;animation:pop .7s ease-out forwards}@keyframes pop{to{transform:translateY(-25px) scale(.2);opacity:0}}@media(max-width:800px){.hero{grid-template-columns:1fr;gap:0;padding-top:72px;text-align:center}.lead{margin:auto}.actions{justify-content:center}.tiny-note{margin-bottom:12px}.scene{height:390px}.halo{width:300px;height:300px}.cloud{scale:.82;bottom:24px}.character{scale:.85}.badge{right:4%;top:40px}.nav{gap:13px}.nav a:nth-child(2){display:none}.cards{grid-template-columns:1fr}.card{min-height:190px}.card-visual{margin-bottom:18px}.work{padding:30px 22px}.story-grid{grid-template-columns:1fr;gap:28px}.story-art{min-height:300px}.section{padding:68px 0}.poem{margin-bottom:55px}}@media(max-width:460px){.shell{width:min(100% - 30px,1160px)}.nav a:first-child{display:none}.hero h1{font-size:59px}.scene{height:350px}.character{scale:.75}.cloud{scale:.68;bottom:15px}.badge{font-size:10px;right:0}.work{border-radius:28px}.footer{gap:12px;align-items:center}.poem{padding:54px 15px}.poem h2{font-size:32px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+.nightlight-overlay{position:fixed;inset:0;z-index:900;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(circle at var(--lx,50%) var(--ly,50%),transparent 0 75px,rgba(255,210,120,.12) 100px,rgba(40,25,58,.5) 175px,rgba(17,14,35,.86) 320px);mix-blend-mode:multiply}body.nightlight-on .nightlight-overlay{opacity:1}
+.tier-toy{margin:32px auto;padding:clamp(20px,4vw,40px);border:1px solid #edcfaa;border-radius:28px;background:linear-gradient(135deg,#fffaf0,#fff0ee 58%,#f8f0ff);box-shadow:0 16px 44px #875b3212}.toy-head{text-align:center;max-width:680px;margin:0 auto 22px}.toy-head h2{margin:8px 0;color:var(--berry-dark);font:600 clamp(28px,4vw,42px)/1.05 Fraunces,serif}.toy-head p{color:var(--muted);line-height:1.7}.storybook{max-width:720px;margin:auto;perspective:1100px}.story-page{min-height:230px;padding:clamp(22px,5vw,44px);position:relative;border:1px solid #e8c69e;border-radius:10px 24px 24px 10px;background:linear-gradient(90deg,#dfbd92 0 12px,#fffaf0 12px);box-shadow:0 12px 28px #6b46301a;transform-origin:left center}.story-page.turn-next{animation:flipN .72s ease-in-out both}.story-page.turn-prev{animation:flipP .72s ease-in-out both}@keyframes flipN{0%{transform:rotateY(0)}48%,54%{transform:rotateY(-88deg);filter:brightness(.74)}100%{transform:rotateY(0);filter:brightness(1)}}@keyframes flipP{0%{transform:rotateY(0)}48%,54%{transform:rotateY(88deg);filter:brightness(.74)}100%{transform:rotateY(0);filter:brightness(1)}}.story-page h3{position:relative;z-index:1;color:#8c4d59;font:600 clamp(24px,3.5vw,34px)/1.1 Fraunces,serif}.story-page p{position:relative;z-index:1;max-width:560px;color:#68564e;line-height:1.85}.page-icon{position:absolute;right:32px;top:25px;font-size:48px}.page-num{position:absolute;right:25px;bottom:17px;color:#a88e79;font-size:12px}.page-controls{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:16px}.page-controls button,.game-start{border:0;border-radius:99px;padding:11px 18px;background:var(--berry);color:#fff;font-weight:700}.page-controls button:disabled{opacity:.45}.page-controls output{min-width:80px;text-align:center;color:var(--muted)}.dream-board{height:280px;position:relative;overflow:hidden;border:1px solid #e8cda5;border-radius:22px;background:radial-gradient(ellipse at 50% 110%,#f5cc91,transparent 48%),linear-gradient(165deg,#28233d,#51405c 55%,#30283f);touch-action:manipulation}.dream-star{position:absolute;top:-55px;left:var(--x);z-index:2;width:70px;height:74px;display:grid;place-items:center;border:0;border-radius:50%;background:#ffe9a52b;color:#ffe78e;font-size:44px;text-shadow:0 0 18px #ffd66c;animation:fall var(--fall) linear forwards;touch-action:manipulation;cursor:pointer}@keyframes fall{to{top:calc(100% + 65px);transform:rotate(18deg)}}.game-line{display:flex;justify-content:space-between;gap:10px;margin:12px 0;color:var(--muted);font-size:13px}.game-line output{font-weight:800;color:var(--berry-dark)}.night .tier-toy{background:linear-gradient(135deg,#393248,#453448 55%,#393047);border-color:#685269}.night .toy-head h2{color:#ffd9ca}@media(max-width:600px){.tier-toy{padding:19px 14px}.story-page{min-height:255px}.page-icon{right:20px;opacity:.6}.dream-board{height:245px}.page-controls{gap:7px}.page-controls button{padding:10px 13px}}@media(prefers-reduced-motion:reduce){.story-page.turn-next,.story-page.turn-prev{animation-duration:.01ms}.dream-star{animation-duration:4.5s}.nightlight-overlay{transition:none}}
+
+
+.story-page{padding:0;overflow:hidden;perspective:1400px;isolation:isolate}
+.page-static{position:absolute;inset:0;padding:clamp(22px,5vw,44px);background:linear-gradient(90deg,#dfbd92 0 12px,#fffaf0 12px);z-index:1}
+.page-turn-sheet{position:absolute;inset:0;z-index:3;transform-style:preserve-3d;transform-origin:left center;visibility:visible;pointer-events:none}
+.page-turn-sheet[hidden]{display:none}
+.page-face{position:absolute;inset:0;overflow:hidden;padding:clamp(22px,5vw,44px);border:1px solid #e8c69e;border-radius:10px 24px 24px 10px;background:linear-gradient(90deg,#dfbd92 0 12px,#fffaf0 12px);box-shadow:0 10px 24px #6b46301a;backface-visibility:hidden}
+.page-front{transform:rotateY(0deg)}
+.page-back{transform:rotateY(180deg)}
+.page-turn-sheet.turn-next{animation:leafForward .72s cubic-bezier(.35,.05,.25,1) forwards}
+.page-turn-sheet.turn-prev{transform-origin:left center;animation:leafReverse .72s cubic-bezier(.35,.05,.25,1) forwards}
+
+@keyframes leafForward{to{transform:rotateY(-180deg)}}
+@keyframes leafReverse{from{transform:rotateY(-180deg)}to{transform:rotateY(0deg)}}
+body.night .page-static,body.night .page-face{background:linear-gradient(90deg,#80684f 0 12px,#fff7e8 12px)}
+@media(max-width:600px){.page-static,.page-face{padding:22px 18px}}
+.storybook{touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:grab}.storybook:active{cursor:grabbing}.dream-cloud{position:absolute;top:-60px;left:var(--x);z-index:3;width:82px;height:68px;display:grid;place-items:center;border:0;border-radius:50%;background:#c3bfd6;color:#4b425c;font-size:47px;line-height:1;filter:drop-shadow(0 4px 7px #11182766);animation:fall var(--fall) linear forwards;touch-action:manipulation;cursor:pointer}.dream-cloud:hover,.dream-cloud:focus-visible{outline:3px solid #fff;border-radius:50%;transform:scale(1.08)}
+</style><style>
+/* Softer storybook materials and a padded moon-nest, per the character art brief. */
+.cloud{bottom:49px;width:342px;height:158px;border-radius:50%;background:radial-gradient(ellipse at 42% 31%,#fffefb 0 24%,#f8e9dc 55%,#e8cdbf 100%);box-shadow:0 24px 38px #82594b28,inset 0 8px 15px #ffffffc9,inset 0 -16px 20px #dcb9aa70;transform:rotate(-7deg)}
+.cloud:before{inset:13px 17px 18px;border:2px solid #fff9;border-radius:50%;opacity:.85}
+.cloud:after{content:"☾";background:none;box-shadow:none;right:30px;top:-9px;color:#d8a35f;font-size:28px}
+.head{background:radial-gradient(ellipse at 38% 23%,#ffe6c8 0,#f2c49f 43%,#d98163 100%);box-shadow:inset -13px -12px 22px #a34f4530,inset 9px 9px 17px #fff1d2a0,0 10px 16px #7b44342b}
+.bodyfur{background:radial-gradient(ellipse at 50% 24%,#ffe0bd,#db926c 65%,#b75f4f)}
+.lantern{box-shadow:0 0 42px #ffdb84d4,0 8px 16px #80533b30}
+@media(max-width:800px){.cloud{width:300px;height:133px;bottom:19px}}
+@media(max-width:460px){.cloud{width:260px;height:118px;bottom:8px}}
+</style><style>
+.scene>.character{display:none!important}
+.hero-reference{position:relative;z-index:3;width:min(320px,72vw);height:auto;object-fit:contain;border-radius:0;filter:drop-shadow(0 24px 22px #87534035);animation:bob 4s ease-in-out infinite;transition:transform .18s ease-out}
+body.night .hero-reference{filter:drop-shadow(0 24px 22px #08061399)}
+@media(max-width:800px){.hero-reference{width:290px}}
+@media(max-width:460px){.hero-reference{width:250px;border-radius:22px}}
+</style><style>
+:root{--cream:#fff8df;--paper:#fffdf4;--berry:#d99a28;--berry-dark:#705126;--ink:#514332;--muted:#89785f;--peach:#ffd58a;--gold:#f2be43;--sage:#c8d3a2;--lilac:#f0dfa8;--shadow:0 22px 70px #8e64201a;--night:#29271f;--night-paper:#39352a;--night-ink:#fff1cb}
+body.night{background:var(--night);color:var(--night-ink);--paper:var(--night-paper);--ink:var(--night-ink);--muted:#c7b996;--shadow:0 22px 70px #07061555}
+.topbar{border-bottom-color:#d49b2b24}.nav a:hover{color:#bf7d20}.brand-mark{background:linear-gradient(145deg,#fff1bb,#f2c35e);box-shadow:inset -4px -5px 8px #bc7e2425,0 5px 12px #b8863824}.mode,.sound{border-color:#d49b2b35}
+.eyebrow{color:#bd7c1d}.eyebrow:before{background:#efc14d;box-shadow:0 0 0 4px #efc14d28}.hero h1,.section h2{color:#705126}.hero h1 span{color:#d88e42}body.night .hero h1,body.night .section h2{color:#ffe39b}
+.primary{background:#d99928;box-shadow:0 8px 22px #c58a2840}.secondary{background:#fff0c5;color:#705126}.primary:hover,.secondary:hover{box-shadow:0 10px 24px #c58a2844}
+.halo{background:radial-gradient(circle,#fff1b3 0,#ffe2a0 43%,#ffce97 70%,transparent 73%);opacity:.9}.stars{color:#c28c2d}.cloud{background:linear-gradient(170deg,#fffefa,#f5e5c1);box-shadow:0 22px 35px #82594b20,inset 0 -10px 16px #e9d7ad70}.cloud:before,.cloud:after{box-shadow:inset 0 -7px 12px #dfc89155}
+.badge{background:#fffdf4;border-color:#efdfbd;color:#705126}.work{background:var(--paper)}.card{background:#fff9e9;border-color:#f0e2c1}.card:nth-child(2){background:#fff8ec}.card:nth-child(3){background:#fff7df}.card-visual{background:linear-gradient(145deg,#fff0bd,#f4cf71);box-shadow:inset -7px -7px 12px #ab7b2020,0 8px 15px #ab7b201c}.card:nth-child(2) .card-visual{background:linear-gradient(145deg,#ffe8c5,#f3c88b)}.card:nth-child(3) .card-visual{background:linear-gradient(145deg,#f7edbd,#d7d89d)}
+.story-art{background:radial-gradient(circle at 60% 45%,#fff0b8,#ffe2a5 50%,#f5d2a4 86%)}.moon{background:#fff4cc;box-shadow:0 0 85px #fff4ca}.story-pip{position:relative;z-index:2;width:190px;max-width:68%;height:auto;filter:drop-shadow(0 18px 18px #94622130);animation:bob 4s ease-in-out infinite}.mini-mallow{display:none!important}
+.poem{background:linear-gradient(135deg,#fff1c7,#ffe7c8 55%,#f8e5bd)}.poem h2{color:#705126}.footer{border-top-color:#d49b2b24}.egg{border-color:#d49b2b30}.toast{background:#634b2d}.spark{color:#d9a634}.scene>.character{display:none!important}
+.hero-reference{width:min(320px,72vw);height:auto;object-fit:contain;border-radius:0;filter:drop-shadow(0 24px 22px #94622130)}body.night .hero-reference{filter:drop-shadow(0 24px 22px #08061399)}
+@media(max-width:800px){.hero-reference{width:290px}.story-pip{width:175px}}
+@media(max-width:460px){.hero-reference{width:250px}.story-pip{width:165px}}
+</style>
+<style>
+.scene{perspective:1000px;transform-style:preserve-3d;isolation:isolate}
+.scene>.halo{transform:translateZ(-90px) scale(1.08)}
+.scene>.stars{transform:translateZ(60px)}
+.scene>.cloud{display:none}
+.platform{position:absolute;z-index:2;bottom:18px;width:275px;height:68px;border-radius:50%;background:linear-gradient(180deg,#fff4c5 0%,#f6d783 52%,#dfae4d 100%);box-shadow:0 24px 35px #9a6a2830,inset 0 7px 12px #fffde2,inset 0 -9px 13px #c88e3240;transform:rotateX(61deg) translateZ(-24px);transform-style:preserve-3d}
+.hero-3d{position:relative;z-index:3;width:min(320px,72vw);aspect-ratio:243/349;transform-style:preserve-3d;will-change:transform;animation:bob 4s ease-in-out infinite;filter:drop-shadow(0 25px 17px #78531d45);transition:transform .18s ease-out}
+.hero-3d:before{content:"";position:absolute;inset:0;background:url("assets/pip-realistic-cutout.png") center/contain no-repeat;transform:translateZ(-13px) translateY(9px) scale(.985);filter:brightness(.78) sepia(.72) saturate(1.25);opacity:.7}
+.hero-reference{position:relative;z-index:2;display:block;width:100%;height:100%;object-fit:contain;transform:translateZ(5px);filter:drop-shadow(0 8px 8px #9b722a25)}
+.hero-3d:after{display:none}
+.badge{transform:translateZ(70px) rotate(4deg);box-shadow:0 15px 28px #805b2130}
+.card{transform-style:preserve-3d;box-shadow:0 12px 25px #72521c12,inset 0 1px 0 #fff9}
+.card:hover{transform:translateY(-8px) rotateX(3deg) rotateY(-1deg);box-shadow:0 25px 40px #72521c20,inset 0 1px 0 #fff9}
+.card-visual{transform:translateZ(14px);box-shadow:0 14px 20px #9c702b20,inset -7px -7px 12px #ab7b2020}
+.primary,.secondary,.mode,.sound{box-shadow:0 7px 14px #8f632018}
+@media(max-width:800px){.hero-3d{width:290px}.platform{width:248px;height:60px;bottom:19px}}
+@media(max-width:460px){.hero-3d{width:250px}.platform{width:215px;height:55px;bottom:18px}}
+@media(prefers-reduced-motion:reduce){.hero-3d{animation:none}.hero-3d:before,.hero-3d:after{transform:none}}
+</style><style>
+:root{--cream:#fff8f1;--paper:#fffdf9;--berry:#a34063;--berry-dark:#5c4033;--ink:#513b37;--muted:#927a71;--peach:#f4c5a5;--gold:#f2c66d;--sage:#b4c9ae;--lilac:#d9c9e8;--shadow:0 22px 70px #7a4b3415;--night:#292432;--night-paper:#393449;--night-ink:#fbecda}
+body.night{background:var(--night);color:var(--night-ink);--paper:var(--night-paper);--ink:var(--night-ink);--muted:#c3b3c4;--shadow:0 22px 70px #07061555}
+.brand-mark{background:linear-gradient(145deg,#f3d5df,#c7b6d3);color:#7e4962;box-shadow:inset -4px -5px 8px #79425228,0 5px 12px #79425222}.nav a:hover{color:#a34063}.mode,.sound{border-color:#a3406335}
+.hero h1,.section h2{color:#63384f}.hero h1 span{color:#b36981}body.night .hero h1,body.night .section h2{color:#f6d7e3}.eyebrow{color:#a34063}.eyebrow:before{background:#d78da5;box-shadow:0 0 0 4px #d78da52a}
+.primary{background:#a34063;box-shadow:0 8px 22px #a3406338}.secondary{background:#f8e8ed;color:#713c53}.primary:hover,.secondary:hover{box-shadow:0 10px 24px #a3406344}
+.halo{background:radial-gradient(circle,#ffe8ee 0,#f2d8e4 45%,#ddd2eb 72%,transparent 73%);opacity:.92}.stars{color:#bd8aa0}.scene>.cloud{display:none}.platform{background:linear-gradient(180deg,#fff3f5 0%,#e8c4d3 52%,#bd92a8 100%);box-shadow:0 24px 35px #70425730,inset 0 7px 12px #fff9f7,inset 0 -9px 13px #86506940}
+.hero-3d{width:min(340px,72vw);aspect-ratio:420/455;filter:drop-shadow(0 25px 17px #43304450)}.hero-3d:before{background:url("assets/pip-realistic-cutout.png") center/contain no-repeat;filter:brightness(.7) saturate(1.1);opacity:.65}.hero-reference{filter:drop-shadow(0 8px 8px #33263925)}.hero-3d:after{display:none}
+.badge{color:#63384f;background:#fffdf9;border-color:#efd7df;box-shadow:0 15px 28px #70425725;transform:translateZ(70px) rotate(4deg)}.work{background:var(--paper)}.card{background:#fff8f5;border-color:#f1e0e5;box-shadow:0 12px 25px #70425712,inset 0 1px 0 #fff9}.card:nth-child(2){background:#faf5fb}.card:nth-child(3){background:#fff7f0}.card:hover{box-shadow:0 25px 40px #70425720,inset 0 1px 0 #fff9}.card-visual{background:linear-gradient(145deg,#f9e4e9,#d8c6e4);box-shadow:0 14px 20px #70425720,inset -7px -7px 12px #70425720}.card:nth-child(2) .card-visual{background:linear-gradient(145deg,#eee4f5,#cfc0e2)}.card:nth-child(3) .card-visual{background:linear-gradient(145deg,#fbe9d9,#eec8bd)}
+.story-art{background:radial-gradient(circle at 60% 45%,#f9e2ea,#ebd4e3 50%,#d7d0e5 86%)}.moon{background:#fff1d7;box-shadow:0 0 85px #fff4ca}.story-pip{position:relative;z-index:2;width:190px;max-width:68%;height:auto;filter:drop-shadow(0 18px 18px #43304435);animation:bob 4s ease-in-out infinite}.mini-mallow{display:none!important}.poem{background:linear-gradient(135deg,#fae9eb,#f4e3ed 55%,#e9e1f2)}.poem h2{color:#63384f}.footer{border-top-color:#a3406318}.art-credit{font-size:11px;color:var(--berry);text-decoration:none}.art-credit:hover{text-decoration:underline}.toast{background:#63384f}.spark{color:#c4819b}
+@media(max-width:800px){.hero-3d{width:320px}.story-pip{width:175px}}
+@media(max-width:460px){.hero-3d{width:270px}.story-pip{width:165px}.footer{flex-wrap:wrap}}
+</style>
+<style>
+/* Keep the character artwork crisp within its stage. */
+.scene{isolation:isolate;perspective:1100px}.star,.capstar{text-shadow:none;filter:none}.star{font-size:0;width:16px;height:16px;background:#a96f8b;clip-path:polygon(50% 0,61% 38%,100% 50%,61% 62%,50% 100%,39% 62%,0 50%,39% 38%);animation:none;opacity:1}
+.scene>.halo{display:none}
+.legacy-character{display:none!important}.hero-3d{transform-style:preserve-3d;filter:none}
+.hero-3d:before{display:none}
+.hero-reference{transform:translate3d(0,0,7px);filter:none;backface-visibility:hidden}
+.platform{transform:rotateX(61deg) translateZ(-24px);background:linear-gradient(180deg,#fff8f8 0%,#e8c4d3 48%,#aa7891 100%);box-shadow:0 28px 36px #70425738,inset 0 8px 13px #fff9f7,inset 0 -12px 16px #68445a48}
+.badge{backdrop-filter:blur(10px);box-shadow:0 18px 30px #7042572b,inset 0 1px 0 #fff}
+.story-pip{filter:none}
+@media(prefers-reduced-motion:reduce){.hero-reference,.hero-3d,.story-pip{animation:none}}
+</style>
+<style>
+/* Use the supplied full-frame character artwork consistently. */
+.scene>.stars,.scene>.platform{display:block}
+.hero-3d{width:min(390px,78vw);aspect-ratio:1;filter:drop-shadow(0 22px 24px #4b30462b);animation:none}
+.hero-3d:before{display:none}
+.hero-reference{width:100%;height:100%;object-fit:contain;border-radius:28px;transform:none;filter:none;animation:none}
+.story-art{background:#f2c4d2;padding:18px}
+.story-art .moon{display:none}
+.story-pip{width:min(100%,340px);max-width:100%;height:auto;border-radius:22px;filter:none;animation:none}
+@media(max-width:800px){.hero-3d{width:min(360px,78vw)}}
+@media(max-width:460px){.hero-3d{width:min(300px,82vw)}.hero-reference{border-radius:22px}}
+</style>
+<style>
+.character-sheet{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin-top:30px}
+.sheet-item{grid-column:span 2;min-height:145px;padding:20px 21px;border:1px solid #efdfe5;border-radius:22px;background:linear-gradient(145deg,#fffdfa,#fff4f3);box-shadow:0 12px 28px #7042570d}
+.sheet-item:nth-child(4){grid-column:span 3}
+.sheet-item span{color:#a34063;font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.sheet-item h3{font:600 20px/1.15 Fraunces,serif;color:#63384f;margin:12px 0 7px}
+.sheet-item p{font-size:12px;line-height:1.65;color:var(--muted);margin:0}
+.sheet-tagline{grid-column:span 3!important;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(130deg,#f9e8ee,#f2e8f5)}
+.sheet-tagline h3{font-size:25px}
+body.night .sheet-item{background:#353044;border-color:#4b425d}body.night .sheet-item h3{color:#f6d7e3}
+@media(max-width:800px){.character-sheet{grid-template-columns:repeat(2,minmax(0,1fr))}.sheet-item,.sheet-item:nth-child(4){grid-column:span 1}.sheet-tagline{grid-column:span 2!important}}
+@media(max-width:460px){.character-sheet{grid-template-columns:1fr;gap:10px}.sheet-item,.sheet-item:nth-child(4),.sheet-tagline{grid-column:1!important;min-height:auto;padding:18px}.sheet-tagline h3{font-size:23px}}
+</style>
+
+<style>
+:root{--cream:#fbf7e9;--paper:#fffdf5;--berry:#718652;--berry-dark:#46563b;--ink:#514638;--muted:#847761;--peach:#efb38b;--gold:#e5b94f;--sage:#bdc99b;--lilac:#e1dcc2;--shadow:0 22px 70px #62532a16;--night:#252a24;--night-paper:#343b31;--night-ink:#fff2d5}
+body.night{background:var(--night);color:var(--night-ink);--paper:var(--night-paper);--ink:var(--night-ink);--muted:#c5c2a9;--shadow:0 22px 70px #080b0755}
+.brand-mark{background:linear-gradient(145deg,#f6dca3,#a9be82);color:#526542}.nav a:hover{color:#718652}.mode,.sound{border-color:#71865235}
+.hero h1,.section h2,.poem h2{color:#46563b}.hero h1 span{color:#b9784d}body.night .hero h1,body.night .section h2{color:#eff0c9}.eyebrow{color:#718652}.eyebrow:before{background:#c5a05b;box-shadow:0 0 0 4px #c5a05b28}
+.primary{background:#718652;box-shadow:0 8px 22px #71865238}.secondary{background:#f0ead1;color:#46563b}.primary:hover,.secondary:hover{box-shadow:0 10px 24px #71865244}
+.halo{background:radial-gradient(circle,#fff1bc 0,#e8edcb 47%,#f1d3ab 72%,transparent 73%)}.stars{color:#b88b45}.scene>.stars,.scene>.halo,.scene>.platform{display:none!important}
+.hero-3d{width:min(430px,88vw);aspect-ratio:1;border-radius:34px;overflow:hidden;background:#f2e8b8;box-shadow:0 28px 60px #66502d25;filter:drop-shadow(0 18px 16px #66502d1c)}.hero-reference{width:100%;height:100%;object-fit:cover;border-radius:inherit;filter:none;transform:translateZ(0);animation:none}.hero-3d:before{display:none}
+.badge{color:#46563b;background:#fffdf5;border-color:#e6dfc5;box-shadow:0 15px 28px #62532a20;transform:translateZ(30px) rotate(3deg)}
+.work{background:var(--paper)}.card{background:#f7f4e7;border-color:#e6e2cc}.card:nth-child(2){background:#f8f0df}.card:nth-child(3){background:#edf1df}.card:hover{box-shadow:0 25px 40px #62532a1c}.card-visual{background:linear-gradient(145deg,#f0eccf,#c8d0a3);box-shadow:inset -7px -7px 12px #68774322,0 14px 20px #62532a17}.card:nth-child(2) .card-visual{background:linear-gradient(145deg,#f8e4b8,#e5bc72)}.card:nth-child(3) .card-visual{background:linear-gradient(145deg,#f6e3cf,#d6a986)}
+.story-art{background:linear-gradient(145deg,#dfe8c7,#f5d8aa 60%,#e7bd91);padding:18px}.story-art .moon{display:none}.story-pip{width:min(100%,340px);max-width:100%;height:auto;border-radius:24px;filter:drop-shadow(0 16px 18px #62502a22);animation:none}
+.poem{background:linear-gradient(135deg,#f1ebd1,#f8e5c6 58%,#e3e8cf);text-align:left;padding:52px clamp(25px,7vw,84px)}.poem .eyebrow{justify-content:flex-start}.poem h2{font-size:clamp(28px,4vw,42px);margin:15px 0 10px}.field-note{max-width:600px;margin:0;color:var(--muted);line-height:1.8;font-size:14px}.note-signoff{display:block;margin-top:18px;color:#718652;font:600 15px Fraunces,serif}
+.footer{border-top-color:#71865224}.egg{border-color:#71865230}.toast{background:#4f6541}.spark{color:#b68d46}.sheet-item{border-color:#e5e1ca;background:linear-gradient(145deg,#fffdf5,#f4f1df);box-shadow:0 12px 28px #62532a0d}.sheet-item span,.story-copy .step{color:#718652}.sheet-item h3{color:#46563b}.sheet-tagline{background:linear-gradient(130deg,#e6ebd4,#f2e7cb)}body.night .sheet-item{background:#353b32;border-color:#4c5545}body.night .sheet-item h3{color:#eff0c9}
+@media(max-width:800px){.hero-3d{width:min(390px,88vw)}.story-pip{width:100%}}@media(max-width:460px){.hero-3d{width:min(330px,88vw);border-radius:26px}.hero-reference{border-radius:inherit}.story-pip{width:100%}.poem{padding:40px 24px}}
+@media(prefers-reduced-motion:reduce){.hero-reference,.story-pip{animation:none}}
+.hero-3d{background:transparent;box-shadow:none;overflow:visible;filter:drop-shadow(0 20px 18px #66502d24)}.hero-reference{object-fit:contain;border-radius:0}
+</style>
+<style>
+.cards{grid-template-columns:repeat(4,minmax(0,1fr))}.card{padding:20px;min-height:260px}.card .index{font-size:9px;letter-spacing:.04em}.card-visual{font-size:29px}@media(max-width:1000px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.cards{grid-template-columns:1fr}.card{min-height:190px}}
+</style>
+<style>
+/* Interactive sunlit Mochi model */
+#character.hero-3d{position:relative;width:min(440px,90vw);aspect-ratio:1;height:auto;overflow:visible;filter:none;transform:none!important;isolation:isolate}
+#scene>.halo{display:block!important;width:min(365px,82vw);height:min(365px,82vw);background:radial-gradient(circle,#fff4c5 0,#f7d982 38%,#f4c88c 58%,transparent 73%);filter:none;opacity:.88}
+#scene>.stars{display:block!important}
+#mochiCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:2;opacity:0;outline:none;cursor:grab;transition:opacity .35s ease}
+#mochiCanvas.is-dragging{cursor:grabbing}
+#character.model-ready #mochiCanvas{opacity:1}
+#character.model-ready .hero-reference{opacity:0;pointer-events:none}
+#character .hero-reference{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:opacity .35s ease}
+#character.model-fallback .hero-reference{cursor:grab;transition:transform .18s ease-out,opacity .35s ease;transform-style:preserve-3d}
+#character.model-fallback .hero-reference.artwork-dragging{cursor:grabbing;transition:none}
+.model-hint{position:absolute;z-index:3;left:50%;bottom:3px;transform:translateX(-50%);padding:8px 13px;border:1px solid #fff;background:#fffdf0d9;color:#765d3f;border-radius:99px;font-size:10px;white-space:nowrap;box-shadow:0 5px 16px #7f55221a;pointer-events:none}
+#character.sparkle-pop:after{content:'✦';position:absolute;z-index:4;right:16%;top:17%;color:#f4c65d;font-size:25px;animation:mochi-pop .6s ease-out both;pointer-events:none}
+@keyframes mochi-pop{0%{opacity:0;transform:scale(.4) rotate(-30deg)}35%{opacity:1;transform:scale(1.25) rotate(12deg)}100%{opacity:0;transform:scale(.8) translateY(-15px)}}
+@media(max-width:800px){#character.hero-3d{width:min(400px,88vw)}}
+@media(max-width:460px){#character.hero-3d{width:min(345px,90vw)}.model-hint{font-size:9px;padding:7px 10px}}
+@media(prefers-reduced-motion:reduce){#mochiCanvas,.model-hint{transition:none}}
+.delight-controls{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap}
+.footer{flex-wrap:wrap;align-items:center;gap:14px}.delight-controls{max-width:100%}
+.delight-controls .sound{border-radius:99px;padding:9px 13px;background:var(--paper);color:var(--ink);font-size:11px;transition:transform .2s,background .2s,box-shadow .2s}
+.delight-controls .sound:hover{transform:translateY(-2px);box-shadow:0 7px 16px #71865220}
+#soundMute[aria-pressed="true"]{background:#edf1df;color:#46563b;border-color:#71865255}
+#chaosMode[aria-pressed="true"]{background:#ffedc6;color:#8d5e31;border-color:#e5b94f}
+.delight-controls{position:fixed;z-index:100;left:50%;bottom:14px;transform:translateX(-50%);width:max-content;max-width:calc(100vw - 24px);padding:8px;gap:7px;flex-wrap:nowrap;border:1px solid #d9c4ae;border-radius:999px;background:#fffdf2ed;box-shadow:0 12px 32px #59442c27,0 2px 6px #fff9 inset;backdrop-filter:blur(14px)}
+.delight-controls .sound,.dock-link{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:38px;padding:9px 13px;border:1px solid #e4d2bf;border-radius:999px;background:#fffefa;color:#684c41;font-size:11px;font-weight:700;text-decoration:none;white-space:nowrap;transition:transform .2s,background .2s,box-shadow .2s}
+.delight-controls .sound:hover,.dock-link:hover{transform:translateY(-2px);background:#fff5df;box-shadow:0 5px 12px #85613a20}
+.delight-controls #soundMute[aria-pressed="true"]{background:#eaf2df;color:#435a3c;border-color:#a7b88e}
+.delight-controls #chaosMode[aria-pressed="true"]{background:#ffedc6;color:#8d5e31;border-color:#e5b94f}
+body{padding-bottom:105px}
+#egg{bottom:82px}.toast{bottom:88px}
+.project-modal[hidden]{display:none!important}
+.project-modal{position:fixed;z-index:120;inset:0;display:grid;place-items:center;padding:20px;background:#27352db5;backdrop-filter:blur(8px)}
+.project-dialog{position:relative;width:min(510px,100%);padding:clamp(25px,5vw,42px);border:1px solid #fff;border-radius:28px;background:linear-gradient(145deg,#fffdf5,#f2f3df);box-shadow:0 24px 80px #18221e55;animation:dialog-in .24s ease-out both}
+.project-dialog h2{margin:12px 0;color:#46563b;font:600 clamp(30px,5vw,42px)/1.08 Fraunces,serif;letter-spacing:-.035em}
+.project-dialog>p{color:#756d5e;font-size:14px;line-height:1.8}
+.project-close{position:absolute;right:14px;top:14px;width:36px;height:36px;border:1px solid #d9d5bf;border-radius:50%;background:#fffdf5;color:#5c6049;font-size:24px;line-height:1}
+.project-spec{margin-top:21px;padding:13px 15px;border-radius:15px;background:#e9efdc;color:#56674a;font-size:12px;font-weight:700}
+.project-signoff{display:block;margin-top:20px;color:#899073;font:600 13px Fraunces,serif}
+body.night .project-dialog{background:linear-gradient(145deg,#353b32,#433b35)}body.night .project-dialog h2{color:#eff0c9}body.night .project-dialog>p,body.night .project-signoff{color:#d0c8ae}
+.card[role="button"]{cursor:pointer}.card[role="button"]:focus-visible{outline:3px solid #d3ad58;outline-offset:4px}
+@keyframes dialog-in{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.cursor-spark{position:fixed;z-index:10000;left:0;top:0;pointer-events:none;will-change:transform,opacity;font-size:16px;line-height:1;animation:cursor-sparkle .72s ease-out forwards}
+.cursor-spark.bubble{width:9px;height:9px;border:1.5px solid #d98b9a;border-radius:50%;background:#fff8e5a8}
+@keyframes cursor-sparkle{0%{opacity:.95;transform:translate(-50%,-50%) scale(.5) rotate(0)}45%{opacity:.9}100%{opacity:0;transform:translate(calc(-50% + var(--drift-x)),calc(-50% - 25px)) scale(1.3) rotate(35deg)}}
+body.chaos-mode{--chaos-tilt:clamp(.6deg,.16vw,2deg)}
+body.chaos-mode .hero h1{transform:rotate(-.8deg);transform-origin:left center}
+body.chaos-mode .brand-mark{animation:chaos-bop 2.8s ease-in-out infinite}
+body.chaos-mode .hero .eyebrow{transform:rotate(-1deg)}
+body.chaos-mode .card{transition:transform .28s,box-shadow .25s}
+body.chaos-mode .card:nth-child(odd){transform:rotate(calc(var(--chaos-tilt) * -1)) translateY(5px)}
+body.chaos-mode .card:nth-child(even){transform:rotate(var(--chaos-tilt)) translateY(-4px)}
+body.chaos-mode .card:hover{transform:translateY(-5px) rotate(0) scale(1.015)}
+body.chaos-mode .sheet-item:nth-child(odd){transform:rotate(calc(var(--chaos-tilt) * -.65))}
+body.chaos-mode .sheet-item:nth-child(even){transform:rotate(calc(var(--chaos-tilt) * .65))}
+body.chaos-mode .work{outline:2px dashed #e5b94f55;outline-offset:7px}
+@keyframes chaos-bop{0%,100%{rotate:0deg}50%{rotate:8deg}}
+@media(max-width:800px){body.chaos-mode .hero h1{transform:rotate(-.4deg)}body.chaos-mode .work{outline-offset:4px}}
+@media(max-width:720px){.delight-controls{width:calc(100vw - 20px);justify-content:center;flex-wrap:wrap;border-radius:24px;padding:7px;gap:6px}.delight-controls .sound,.dock-link{min-height:34px;padding:7px 10px;font-size:10px}body{padding-bottom:120px}#egg{bottom:112px}.toast{bottom:115px}}
+@media(max-width:560px){.delight-controls{gap:7px}.delight-controls .sound{font-size:10px;padding:8px 10px}body.chaos-mode .card:nth-child(odd){transform:translateX(-2px) rotate(-.7deg)}body.chaos-mode .card:nth-child(even){transform:translateX(2px) rotate(.7deg)}}
+@media(pointer:coarse),(prefers-reduced-motion:reduce){.cursor-spark{display:none}body.chaos-mode .brand-mark{animation:none}}
+</style>
+<style>
+.dreambook{display:grid;gap:22px}
+.dream-counter,.guestbook-card{border:1px solid #e5e1ca;border-radius:30px;background:var(--paper);box-shadow:var(--shadow)}
+.dream-counter{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:28px clamp(22px,5vw,48px);background:linear-gradient(120deg,#eaf3e8 0%,#fff2d5 100%)}
+body.night .dream-counter{background:linear-gradient(120deg,#35433a,#483d39)}
+.dream-counter h2,.guestbook-heading h2{margin:9px 0;color:var(--berry-dark);font:600 clamp(28px,4vw,38px)/1.1 Fraunces,serif;letter-spacing:-.035em}body.night .dream-counter h2,body.night .guestbook-heading h2{color:#eff0c9}
+.dream-counter p,.guestbook-heading p{margin:0;color:var(--muted);font-size:13px;line-height:1.7}
+.odometer-card{position:relative;min-width:230px;padding:15px 20px 17px;border:4px solid #e6c77e;border-radius:18px;background:linear-gradient(145deg,#405646,#273b37);color:#f9e5aa;text-align:center;box-shadow:inset 0 0 0 2px #fff3c933,0 9px 20px #554d2a20}
+.odometer-caption{display:block;margin-bottom:7px;color:#c8d8ae;font-size:9px;font-weight:800;letter-spacing:.17em}
+.odometer{display:flex;justify-content:center;align-items:center;gap:2px;color:#ffedbd;font:700 clamp(30px,5vw,45px)/1 'Courier New',monospace;letter-spacing:.02em;text-shadow:0 0 10px #ffe6a255}
+.odometer-visual{display:flex;align-items:center;gap:2px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.odometer-digit{display:block;width:.62em;height:1.12em;overflow:hidden;border-radius:5px;background:linear-gradient(90deg,#172c29,#334a3d 48%,#172c29);box-shadow:inset 0 1px 2px #111a}
+.odometer-roll{display:flex;flex-direction:column;transition:transform .8s cubic-bezier(.18,.78,.23,1.05)}
+.odometer-roll span{height:1.12em;display:grid;place-items:center}
+.odometer-comma{padding:0 1px;color:#ffedbd}
+.odometer-sparkle{position:absolute;right:-11px;top:-12px;color:#e8b944;font-size:25px;text-shadow:0 2px 5px #8b5b3155}
+.guestbook-card{padding:clamp(22px,4vw,38px)}
+.guestbook-heading{display:flex;align-items:center;gap:15px;margin-bottom:23px}
+.guestbook-stamp{flex:none;width:52px;height:52px;display:grid;place-items:center;border-radius:18px;background:#f1e7c7;color:#6c8051;font-size:26px;box-shadow:inset 0 -4px 0 #d6c99e}
+.guestbook-heading h2{font-size:clamp(26px,3.5vw,34px)}
+.guest-form{display:grid;grid-template-columns:minmax(150px,.7fr) minmax(0,1.3fr);gap:13px 16px;padding:18px;border-radius:20px;background:#f7f4e7;border:1px solid #e6e2cc}
+.guest-form label{position:relative;display:grid;gap:7px;color:#59644a;font-size:12px;font-weight:700}
+.guest-form label>span:first-child{color:var(--muted);font-weight:500}
+.guest-form input,.guest-form textarea{width:100%;border:1px solid #d8d8be;border-radius:12px;background:#fffdf7;color:#514638;padding:11px 12px;font:500 13px 'DM Sans',sans-serif;outline:none}
+.guest-form input:focus,.guest-form textarea:focus{border-color:#8ba077;box-shadow:0 0 0 3px #8ba07725}
+.guest-form textarea{min-height:82px;resize:vertical}
+.character-count{position:absolute;right:10px;bottom:9px;color:#968b73;font-size:10px;font-weight:500}
+.guest-form-bottom{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.guest-form-bottom p{margin:0;color:var(--muted);font-size:11px;line-height:1.5}
+.guest-submit{padding:11px 17px;white-space:nowrap;cursor:pointer}
+.dream-wall-top{display:flex;align-items:center;justify-content:space-between;margin:25px 2px 12px}
+.dream-wall-top h3{margin:0;color:var(--berry-dark);font:600 21px Fraunces,serif}body.night .dream-wall-top h3{color:#eff0c9}
+.dream-wall-top>span{color:var(--muted);font-size:11px}
+.dream-wall{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.empty-wishes{grid-column:1/-1;margin:0;padding:22px;border:1px dashed #c9c5a8;border-radius:16px;color:var(--muted);text-align:center;font-size:13px}
+.wish-note{position:relative;min-height:110px;padding:16px;border:1px solid #e8dfc0;border-radius:18px;background:linear-gradient(145deg,#fff9e8,#fffdf5);box-shadow:0 7px 16px #62532a0d;overflow-wrap:anywhere}
+.wish-note:nth-child(3n+2){background:linear-gradient(145deg,#f1f4e3,#fcf8e9);border-color:#dce4c9}
+.wish-note:nth-child(3n){background:linear-gradient(145deg,#f9e8e2,#fff8e9);border-color:#efd7c9}
+.wish-note p{margin:0 0 12px;color:#5d5748;font-size:13px;line-height:1.65;white-space:pre-wrap}
+.wish-note footer{display:flex;align-items:center;justify-content:space-between;gap:8px;color:#718652;font-size:10px;font-weight:700}
+.wish-note time{color:#9b8e73;font-size:9px;font-weight:500}
+body.night .guestbook-card{background:var(--paper);border-color:#4c5545}body.night .guest-form{background:#3c4136;border-color:#59644b}body.night .guest-form label{color:#e5e7c7}body.night .guest-form input,body.night .guest-form textarea{background:#30372f;color:#fbf3df;border-color:#58634d}body.night .wish-note,body.night .wish-note:nth-child(3n+2),body.night .wish-note:nth-child(3n){background:#3c4136;border-color:#59644b}body.night .wish-note p{color:#fbf3df}
+body.chaos-mode .wish-note:nth-child(odd){transform:rotate(-.8deg)}body.chaos-mode .wish-note:nth-child(even){transform:rotate(.8deg)}
+@media(max-width:760px){.dream-wall{grid-template-columns:repeat(2,minmax(0,1fr))}.dream-counter{align-items:flex-start;flex-direction:column}.odometer-card{align-self:center}}
+@media(max-width:520px){.guest-form{grid-template-columns:1fr}.guest-form-bottom{align-items:flex-start;flex-direction:column}.guest-submit{width:100%}.dream-wall{grid-template-columns:1fr}.wish-note{min-height:auto}.guestbook-heading{align-items:flex-start}.odometer-card{min-width:min(230px,100%)} }
+</style>
+<style>
+@media(max-width:520px){
+  .delight-controls{width:calc(100vw - 24px);max-width:420px;flex-wrap:wrap;gap:5px;padding:6px;}
+  .delight-controls .sound,.delight-controls .dock-link{min-height:34px;padding:7px 9px;font-size:10px;}
+  .delight-controls .tune-select{min-height:34px;max-width:145px;padding:7px 8px;font-size:10px;}
+  body{padding-bottom:126px;}
+}
+.tune-select{min-height:38px;max-width:190px;padding:9px 11px;border:1px solid #e4d2bf;border-radius:999px;background:#fffefa;color:#684c41;font:700 11px 'DM Sans',sans-serif;cursor:pointer;white-space:nowrap}body.night .tune-select{background:#39334f;border-color:#62566f;color:#fbecda}
+/* Clearer Chaos mode: animated, offset project cards and a playful sheet. */
+body.chaos-mode .cards .card:nth-child(odd){animation:chaos-card-odd 2.8s ease-in-out infinite;will-change:transform}
+body.chaos-mode .cards .card:nth-child(even){animation:chaos-card-even 3.1s ease-in-out infinite .25s;will-change:transform}
+body.chaos-mode .cards .card:hover{animation-play-state:paused;transform:translateY(-9px) rotate(0) scale(1.035);box-shadow:0 24px 42px #8d623536}
+body.chaos-mode .character-sheet .sheet-item:nth-child(odd){transform:rotate(-2.2deg) translateY(-3px);box-shadow:0 15px 34px #896b3030}
+body.chaos-mode .character-sheet .sheet-item:nth-child(even){transform:rotate(2.2deg) translateY(3px);box-shadow:0 15px 34px #896b3030}
+@keyframes chaos-card-odd{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-12px) rotate(-1.4deg)}}
+@keyframes chaos-card-even{0%,100%{transform:translateY(2px) rotate(3deg)}50%{transform:translateY(-10px) rotate(1.4deg)}}
+@media(max-width:560px){
+  body.chaos-mode .cards .card:nth-child(odd){animation-name:chaos-card-mobile-odd}
+  body.chaos-mode .cards .card:nth-child(even){animation-name:chaos-card-mobile-even}
+  @keyframes chaos-card-mobile-odd{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(-.7deg)}}
+  @keyframes chaos-card-mobile-even{0%,100%{transform:translateY(2px) rotate(2deg)}50%{transform:translateY(-7px) rotate(.7deg)}}
+}
+@media(prefers-reduced-motion:reduce){
+  body.chaos-mode .cards .card{animation:none!important;will-change:auto}
+  body.chaos-mode .cards .card:nth-child(odd){transform:translateY(-5px) rotate(-2.5deg)}
+  body.chaos-mode .cards .card:nth-child(even){transform:translateY(5px) rotate(2.5deg)}
+}
+
+/* Extend Chaos mode across the whole page while keeping Mochi's 3D model steady. */
+body.chaos-mode .topbar,
+body.chaos-mode main>.hero,
+body.chaos-mode main>.section,
+body.chaos-mode main>.poem{
+  animation:chaos-page-sway 5.8s ease-in-out infinite;
+}
+body.chaos-mode main>#about{animation-delay:-1.4s}
+body.chaos-mode main>#work{animation-delay:-2.8s}
+body.chaos-mode main>#story{animation-delay:-.9s}
+body.chaos-mode main>#dreams{animation-delay:-3.5s}
+body.chaos-mode main>.poem{animation-delay:-2.1s}
+body.chaos-mode .story-art,
+body.chaos-mode .story-copy,
+body.chaos-mode .dream-counter,
+body.chaos-mode .guestbook-card,
+body.chaos-mode .poem h2,
+body.chaos-mode .poem .field-note{
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+body.chaos-mode .story-art{transform:rotate(-1.2deg)}
+body.chaos-mode .story-copy{transform:rotate(.8deg)}
+body.chaos-mode .dream-counter{transform:rotate(.7deg)}
+body.chaos-mode .guestbook-card{transform:rotate(-.35deg);box-shadow:0 20px 46px #78914a20}
+body.chaos-mode .poem h2{transform:rotate(-.8deg)}
+body.chaos-mode .poem .field-note{transform:rotate(.5deg)}
+body.chaos-mode .footer>span{animation:chaos-footer-twinkle 2.4s ease-in-out infinite alternate}
+@keyframes chaos-page-sway{
+  0%,100%{transform:translateY(0) rotate(-.12deg)}
+  50%{transform:translateY(-5px) rotate(.12deg)}
+}
+@keyframes chaos-footer-twinkle{from{opacity:.72}to{opacity:1}}
+@media(max-width:560px){
+  body.chaos-mode main>.hero,
+  body.chaos-mode main>.section,
+  body.chaos-mode main>.poem{animation-duration:6.8s}
+  body.chaos-mode .story-art{transform:rotate(-.7deg)}
+  body.chaos-mode .story-copy{transform:rotate(.5deg)}
+  body.chaos-mode .dream-counter{transform:rotate(.4deg)}
+  body.chaos-mode .guestbook-card{transform:rotate(-.2deg)}
+}
+@media(prefers-reduced-motion:reduce){
+  body.chaos-mode .topbar,
+  body.chaos-mode main>.hero,
+  body.chaos-mode main>.section,
+  body.chaos-mode main>.poem,
+  body.chaos-mode .footer>span{animation:none!important}
+}
+
+/* Make the five-tap discovery last long enough to notice. */
+#character.egg-celebrate .hero-reference{animation:egg-character-pop 2.9s ease-in-out}
+#character.egg-celebrate #mochiCanvas{animation:egg-character-pop 2.9s ease-in-out}
+.spark.egg-spark{animation:egg-spark-float 2.8s ease-in-out forwards}
+@keyframes egg-character-pop{0%,100%{scale:1}18%{scale:1.07}42%{scale:.99}64%{scale:1.045}}
+@keyframes egg-spark-float{0%{opacity:0;transform:translateY(8px) scale(.45) rotate(-20deg)}15%{opacity:1}82%{opacity:.95;transform:translateY(-34px) scale(1) rotate(18deg)}100%{opacity:0;transform:translateY(-46px) scale(.8) rotate(28deg)}}
+@media(prefers-reduced-motion:reduce){#character.egg-celebrate .hero-reference,#character.egg-celebrate #mochiCanvas,.spark.egg-spark{animation:none}}
+.delight-controls #sound,.delight-controls #soundMute{min-height:42px;padding:10px 14px;font-size:12px;font-weight:800;border-width:2px;box-shadow:0 3px 9px #59442c12}
+.delight-controls #sound{background:#fff1c9;color:#644a21;border-color:#e5c36f}
+.delight-controls #sound[aria-pressed="true"]{background:#e5f0d9;color:#3f6238;border-color:#95b777;box-shadow:0 0 0 3px #95b77730}
+.delight-controls #soundMute[aria-pressed="true"]{background:#f7e7e7;color:#743b45;border-color:#d69aa0;box-shadow:0 0 0 3px #d69aa030}
+@media(max-width:720px){.delight-controls #sound,.delight-controls #soundMute{min-height:38px;padding:8px 11px;font-size:11px}}
+
+/* Chaos mode reaches every content area, not just the work cards. */
+@keyframes chaos-page-sway{
+  0%,100%{transform:translateY(0) rotate(-.35deg)}
+  50%{transform:translateY(-10px) rotate(.35deg)}
+}
+@keyframes chaos-panel-float{
+  0%,100%{transform:translateY(0) rotate(-1.7deg)}
+  50%{transform:translateY(-9px) rotate(1.7deg)}
+}
+@keyframes chaos-panel-float-reverse{
+  0%,100%{transform:translateY(-4px) rotate(1.5deg)}
+  50%{transform:translateY(6px) rotate(-1.5deg)}
+}
+@keyframes chaos-detail-wiggle{
+  0%,100%{transform:rotate(-1.3deg) translateY(0)}
+  50%{transform:rotate(1.3deg) translateY(-5px)}
+}
+body.chaos-mode .hero>div:first-child{animation:chaos-panel-float 4.1s ease-in-out infinite}
+body.chaos-mode .scene>.stars .star{animation:chaos-detail-wiggle 2s ease-in-out infinite}
+body.chaos-mode .scene>.stars .star:nth-child(even){animation-delay:-.9s}
+body.chaos-mode .scene>.badge{animation:chaos-panel-float-reverse 4.8s ease-in-out infinite}
+body.chaos-mode .character-sheet .sheet-item:nth-child(odd){animation:chaos-panel-float 3.5s ease-in-out infinite}
+body.chaos-mode .character-sheet .sheet-item:nth-child(even){animation:chaos-panel-float-reverse 3.8s ease-in-out infinite}
+body.chaos-mode .character-sheet .sheet-item:nth-child(2){animation-delay:-1s}
+body.chaos-mode .character-sheet .sheet-item:nth-child(3){animation-delay:-2s}
+body.chaos-mode .character-sheet .sheet-item:nth-child(4){animation-delay:-.6s}
+body.chaos-mode .character-sheet .sheet-item:nth-child(5){animation-delay:-1.6s}
+body.chaos-mode #story .story-art{animation:chaos-panel-float 4.4s ease-in-out infinite}
+body.chaos-mode #story .story-art .story-pip{animation:chaos-panel-float-reverse 3.6s ease-in-out infinite}
+body.chaos-mode #story .story-copy{animation:chaos-panel-float-reverse 5s ease-in-out infinite}
+body.chaos-mode #story .dots button{animation:chaos-detail-wiggle 2.4s ease-in-out infinite}
+body.chaos-mode #story .dots button:nth-child(2){animation-delay:-.8s}
+body.chaos-mode #story .dots button:nth-child(3){animation-delay:-1.6s}
+body.chaos-mode .dream-counter>div{animation:chaos-panel-float 4s ease-in-out infinite}
+body.chaos-mode .odometer-card{animation:chaos-panel-float-reverse 3.6s ease-in-out infinite}
+body.chaos-mode .guestbook-heading{animation:chaos-detail-wiggle 4.5s ease-in-out infinite}
+body.chaos-mode .guest-form{animation:chaos-panel-float-reverse 5s ease-in-out infinite}
+body.chaos-mode .wish-note:nth-child(odd){animation:chaos-panel-float 3.7s ease-in-out infinite}
+body.chaos-mode .wish-note:nth-child(even){animation:chaos-panel-float-reverse 4.2s ease-in-out infinite}
+body.chaos-mode .wish-note:nth-child(3n){animation-delay:-1.7s}
+body.chaos-mode .poem .eyebrow,
+body.chaos-mode .poem h2,
+body.chaos-mode .poem .field-note,
+body.chaos-mode .poem .note-signoff{animation:chaos-detail-wiggle 4.6s ease-in-out infinite}
+body.chaos-mode .poem h2{animation-delay:-1s}
+body.chaos-mode .poem .field-note{animation-delay:-2s}
+body.chaos-mode .poem .note-signoff{animation-delay:-3s}
+body.chaos-mode .footer .delight-controls>*{animation:chaos-detail-wiggle 3.3s ease-in-out infinite}
+body.chaos-mode .footer .delight-controls>*:nth-child(even){animation-delay:-1.5s}
+@media(max-width:560px){
+  body.chaos-mode .hero>div:first-child{animation-duration:5s}
+  body.chaos-mode .character-sheet .sheet-item,
+  body.chaos-mode .wish-note{animation-duration:4.8s}
+}
+/* Make the entire page join the playful motion, not only the project cards. */
+@keyframes chaos-heading-bounce{
+  0%,100%{transform:translateY(0) rotate(-1deg)}
+  50%{transform:translateY(-7px) rotate(1deg)}
+}
+@keyframes chaos-world-drift{
+  0%,100%{transform:translateY(0) rotate(-1.2deg) scale(1)}
+  50%{transform:translateY(-12px) rotate(1.2deg) scale(1.025)}
+}
+body.chaos-mode .topbar .brand-mark{animation:chaos-detail-wiggle 2.2s ease-in-out infinite}
+body.chaos-mode .hero .scene{animation:chaos-scene-float 4.2s ease-in-out infinite}
+body.chaos-mode .hero .halo{animation:chaos-halo-pulse 3.4s ease-in-out infinite}
+body.chaos-mode .hero .cloud,
+body.chaos-mode .hero .platform{animation:chaos-panel-float-reverse 3.7s ease-in-out infinite}
+body.chaos-mode .hero .platform{animation-delay:-1.4s}
+body.chaos-mode #about .section-head,
+body.chaos-mode #work .section-head,
+body.chaos-mode #story .section-head,
+body.chaos-mode .poem .eyebrow,
+body.chaos-mode .poem h2,
+body.chaos-mode .poem .field-note,
+body.chaos-mode .poem .note-signoff{animation:chaos-heading-bounce 3.5s ease-in-out infinite}
+body.chaos-mode #about .section-head{animation-delay:-.5s}
+body.chaos-mode #work .section-head{animation-delay:-1.7s}
+body.chaos-mode #story .section-head{animation-delay:-2.4s}
+body.chaos-mode #dreams>.dream-counter{animation:chaos-panel-float 4s ease-in-out infinite}
+body.chaos-mode .work{animation:chaos-world-drift 5.2s ease-in-out infinite}
+body.chaos-mode .guestbook-card{animation:chaos-panel-float-reverse 5.1s ease-in-out infinite}
+body.chaos-mode .poem{animation:chaos-world-drift 5.5s ease-in-out infinite}
+body.chaos-mode .footer>span{animation:chaos-detail-wiggle 3s ease-in-out infinite}
+@keyframes chaos-scene-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes chaos-halo-pulse{
+  0%,100%{transform:scale(.96);opacity:.72}
+  50%{transform:scale(1.07);opacity:1}
+}
+@media(prefers-reduced-motion:reduce){
+  body.chaos-mode .topbar,
+  body.chaos-mode main>.hero,
+  body.chaos-mode main>.section,
+  body.chaos-mode main>.poem,
+  body.chaos-mode .footer>span,
+  body.chaos-mode .hero>div:first-child,
+  body.chaos-mode .hero .scene,
+  body.chaos-mode .hero .halo,
+  body.chaos-mode .hero .cloud,
+  body.chaos-mode .hero .platform,
+  body.chaos-mode .topbar .brand-mark,
+  body.chaos-mode .scene>.stars .star,
+  body.chaos-mode .scene>.badge,
+  body.chaos-mode .character-sheet .sheet-item,
+  body.chaos-mode #story .story-art,
+  body.chaos-mode #story .story-art .story-pip,
+  body.chaos-mode #story .story-copy,
+  body.chaos-mode #story .dots button,
+  body.chaos-mode .dream-counter>div,
+  body.chaos-mode .dream-counter,
+  body.chaos-mode .odometer-card,
+  body.chaos-mode .guestbook-heading,
+  body.chaos-mode .guest-form,
+  body.chaos-mode .guestbook-card,
+  body.chaos-mode .wish-note,
+  body.chaos-mode .poem>*,
+  body.chaos-mode .work,
+  body.chaos-mode .poem,
+  body.chaos-mode #about .section-head,
+  body.chaos-mode #work .section-head,
+  body.chaos-mode #story .section-head,
+  body.chaos-mode .footer .delight-controls>*{animation:none!important}
+  body.chaos-mode .character-sheet .sheet-item:nth-child(odd){transform:rotate(-2deg)}
+  body.chaos-mode .character-sheet .sheet-item:nth-child(even){transform:rotate(2deg)}
+}/* Soft baby pink and lilac palette across the portfolio. */
+:root{--cream:#fff7fb;--paper:#fffafd;--berry:#b95891;--berry-dark:#795080;--ink:#51465d;--muted:#91819a;--peach:#f4c8dd;--gold:#eed8f6;--sage:#d6c4e8;--lilac:#dfd2f3;--shadow:0 22px 70px #744d6f18;--night:#211c31;--night-paper:#332b48;--night-ink:#fff2fc}
+body.night{background:var(--night);--paper:var(--night-paper);--ink:var(--night-ink);--muted:#c8b7d1;--shadow:0 22px 70px #09071455}
+.hero h1{color:#795080}body.night .hero h1{color:#f3d9f4}.hero h1 span{color:#ba689b}body.night .hero h1 span{color:#e8b9dd}
+.eyebrow{color:#a35891}.eyebrow:before{background:#db8ab8;box-shadow:0 0 0 4px #db8ab822}
+.primary{background:#b95891;box-shadow:0 8px 22px #a3406330}.secondary{background:#f1e5f8;color:#704c7a}body.night .secondary{background:#493957;color:#f4dcf4}
+.brand-mark{background:linear-gradient(145deg,#f8d8ed,#dfc9f2);box-shadow:inset -4px -5px 8px #a46a9930,0 5px 12px #a46a9925}
+.hero .halo{background:radial-gradient(circle,#fff0cf 0,#f8d5e7 43%,#e4d6f5 73%,transparent 74%)}
+.hero .stars{color:#a46db2}.hero .cloud{background:linear-gradient(170deg,#fffaff,#f0dff4);box-shadow:0 22px 35px #704f7525,inset 0 -10px 16px #d9c4e760}
+.hero .platform{background:linear-gradient(180deg,#fff8ff 0%,#e8cfe9 48%,#a87da7 100%);box-shadow:0 28px 36px #70425730,inset 0 8px 13px #fff9f7,inset 0 -12px 16px #68445a38}
+.hero .badge{color:#684c73;background:#fffafd;border-color:#ebd5e9;box-shadow:0 15px 28px #70425720}
+.work{background:linear-gradient(135deg,#fff5fb,#f8f3ff)}.card,.card:nth-child(2),.card:nth-child(3){background:#fffafd;border-color:#eedbed}.card:nth-child(2){background:#faf5ff}.card:nth-child(3){background:#fff4fa}
+.card-visual,.card:nth-child(2) .card-visual,.card:nth-child(3) .card-visual{background:linear-gradient(145deg,#fbe3f0,#dfd0f2);box-shadow:0 14px 20px #70425716,inset -7px -7px 12px #70425715}
+.story-art{background:radial-gradient(circle at 60% 45%,#ffe6f1,#edd9f2 53%,#dcd8f2 88%)}.moon{background:#fff0ce;box-shadow:0 0 85px #fff1d688}
+.poem{background:linear-gradient(135deg,#fae8f1,#f5e3f5 55%,#e9e2f8)}.poem h2{color:#795080}.note-signoff{color:#875c91}body.night .note-signoff{color:#e8c8ef}
+.footer{border-top-color:#b9589125;color:#8c7693}.mode,.sound{border-color:#dfc9e5}
+body.night .work{background:linear-gradient(135deg,#342a45,#382c4a)}body.night .card,body.night .card:nth-child(2),body.night .card:nth-child(3){background:#40344f;border-color:#5d4c69;color:#fff2fc}body.night .card-visual,body.night .card:nth-child(2) .card-visual,body.night .card:nth-child(3) .card-visual{background:linear-gradient(145deg,#63496c,#514a77)}body.night .poem{background:linear-gradient(135deg,#403147,#3c304d 55%,#34304e)}body.night .poem h2{color:#f0d9f4}/* Dream jar palette and friendly guestbook layout. */
+.dream-counter{background:linear-gradient(125deg,#fff0f7 0%,#f3eaff 58%,#eaf5ff 100%);border-color:#f1c9e2}
+body.night .dream-counter{background:linear-gradient(125deg,#4c344c,#3c3657 58%,#343b55);border-color:#745274}
+.dream-counter .eyebrow,.guestbook-heading .eyebrow{color:#aa5b91}
+.odometer-card{border:3px solid #d7b7e7;background:linear-gradient(145deg,#76508b,#493b72);color:#fff3fb;box-shadow:inset 0 0 0 2px #ffffff20,0 9px 20px #72538524}
+.odometer-caption{color:#f0d2f2}.odometer{color:#fff4fb;text-shadow:0 0 10px #ffc8eb80}
+.odometer-digit{background:linear-gradient(90deg,#382c56,#604977 48%,#382c56);box-shadow:inset 0 1px 2px #21182f}
+.odometer-comma{color:#ffe0f3}.odometer-sparkle{color:#ffcae5;text-shadow:0 2px 5px #683b7055}
+.guestbook-card{border:2px solid #f5cde5;background:linear-gradient(150deg,#fffdfd 0%,#fff7fb 65%,#f8f4ff 100%)}
+body.night .guestbook-card{background:linear-gradient(150deg,#352c42,#342d4b);border-color:#765273}
+.guestbook-heading{align-items:flex-start}.guestbook-stamp{width:58px;height:58px;border-radius:20px;background:linear-gradient(145deg,#ffe2f0,#eadbff);color:#a04d83;box-shadow:inset 0 -4px 0 #e3bfdf;font-size:28px}
+.guestbook-heading h2{color:#9871ae}body.night .guestbook-heading h2{color:#e4c2f2}
+.guestbook-heading p{font-size:14px}
+.guest-form{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 16px;padding:20px;border:1px solid #f4d5e9;border-radius:24px;background:linear-gradient(135deg,#fff9fc,#fbf7ff)}
+body.night .guest-form{background:#3b3048;border-color:#694c6e}
+.guest-form label{color:#725374;gap:8px}.guest-form label>span:first-child{color:#aa8eaa}
+.guest-form input,.guest-form textarea,.guest-form .wish-type-select{min-height:48px;border:1.5px solid #efc4e0;border-radius:18px;background:#fff;color:#51445c;padding:12px 15px;font-size:14px;box-shadow:0 2px 7px #bd82a00b}
+.guest-form input::placeholder,.guest-form textarea::placeholder{color:#a39dad}
+.guest-form input:focus,.guest-form textarea:focus,.guest-form .wish-type-select:focus{border-color:#d66ca7;box-shadow:0 0 0 4px #e994c522}
+body.night .guest-form input,body.night .guest-form textarea,body.night .guest-form .wish-type-select{background:#2f293c;color:#f8eafa;border-color:#785878}
+.guest-form .wish-type-select{width:100%;font:600 14px 'DM Sans',sans-serif;cursor:pointer}
+.guest-form .wish-message-label{grid-column:1/-1}
+.guest-form textarea{min-height:100px;padding-right:62px;resize:vertical}
+.character-count{right:14px;bottom:12px;color:#a68ca4}
+.guest-form-bottom{align-items:center}.guest-form-bottom p{max-width:390px;font-size:12px}
+.guest-submit{min-height:54px;padding:13px 22px;border-radius:18px;background:linear-gradient(100deg,#f47eae,#df7dc1);box-shadow:0 7px 0 #e5bad5,0 12px 22px #d178a029;color:#fff;font-size:14px;text-transform:capitalize}
+.guest-submit:hover{transform:translateY(-2px);box-shadow:0 9px 0 #e5bad5,0 15px 25px #d178a035}
+.guest-submit:disabled{opacity:.65;cursor:wait;transform:none}
+.dream-wall-top{align-items:flex-end;margin:30px 2px 14px}.dream-wall-top h3{color:#9a72b0;font-size:24px}.dream-wall-top p{margin:5px 0 0;color:var(--muted);font-size:12px}
+.guestbook-mode{margin-left:auto;padding:8px 12px;border:1px solid #efc9e3;border-radius:99px;background:#fff3fa;color:#8f5287;font-size:11px;font-weight:700;white-space:nowrap}
+body.night .guestbook-mode{background:#49354f;border-color:#73527a;color:#f5d6f2}
+.dream-wall{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.wish-note{min-height:128px;padding:18px;border:1.5px solid #f3cbe4;border-radius:22px;background:linear-gradient(145deg,#fff5fb,#fffdfd);box-shadow:0 8px 22px #a86e9614}
+.wish-note:nth-child(3n+2){background:linear-gradient(145deg,#f8f1ff,#fffafd);border-color:#e3d2f2}
+.wish-note:nth-child(3n){background:linear-gradient(145deg,#eef8ff,#fffafd);border-color:#d3e6f4}
+.wish-note p{color:#59485e;font-size:14px}.wish-note footer{color:#9a5a87}.wish-note time{color:#a18da3}
+.wish-note .wish-kind{display:inline-flex;margin-bottom:10px;padding:5px 9px;border-radius:99px;background:#ffe5f2;color:#9c4d7f;font-size:10px;font-weight:800}
+.wish-note:nth-child(3n+2) .wish-kind{background:#efe3ff;color:#795b9b}.wish-note:nth-child(3n) .wish-kind{background:#e2f2ff;color:#577b9a}
+body.night .wish-note,body.night .wish-note:nth-child(3n+2),body.night .wish-note:nth-child(3n){background:#3d334c;border-color:#664e70}body.night .wish-note p{color:#f7eaf8}body.night .wish-note footer{color:#e2c2e7}body.night .wish-note time{color:#cbb4d4}
+.empty-wishes{border-color:#e5cce3;background:#fff8fd}
+@media(max-width:760px){.dream-wall{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.guest-form{grid-template-columns:1fr;padding:15px}.guest-form .wish-message-label{grid-column:auto}.guest-form-bottom{align-items:stretch}.guestbook-mode{margin-left:0}.dream-wall-top{align-items:flex-start;flex-wrap:wrap}.dream-wall{grid-template-columns:1fr}.guest-submit{width:100%}.guestbook-stamp{width:48px;height:48px}}</style><style>
+/* Tier 1 mood: warm honey, toasted cream, and rosy cheeks. */
+:root{--cream:#fff8e9;--paper:#fffdf7;--berry:#b95c63;--berry-dark:#713b3b;--ink:#533c32;--muted:#927568;--peach:#f2bd91;--gold:#edbd4f;--sage:#b8c899;--lilac:#efc3b8;--shadow:0 22px 70px #875b3218;--night:#292626;--night-paper:#393231;--night-ink:#fff2df}
+body.night{--night:#292626;--night-paper:#393231;--night-ink:#fff2df;--muted:#d3b9aa;--shadow:0 22px 70px #100b0a66}
+.hero .halo{background:radial-gradient(circle,#ffe79c 0,#ffd59f 42%,#f5c5b5 70%,transparent 73%)}
+.hero .stars{color:#c99034}.hero .platform{background:linear-gradient(180deg,#fff4d8,#e9bb65 52%,#a96c3f);box-shadow:0 28px 36px #70425724,inset 0 8px 13px #fff9e9,inset 0 -12px 16px #68445a28}
+.hero .badge{color:#713b3b;background:#fffaf0;border-color:#f0d5a8}
+body.night .hero .halo{background:radial-gradient(circle,#796046 0,#65504d 45%,#59494f 72%,transparent 74%)}
+body.night .secondary{background:#4a3934;color:#ffe1cd}
+.work{background:linear-gradient(135deg,#fff4df,#fff7ef)}.card,.card:nth-child(2),.card:nth-child(3){background:#fffaf0;border-color:#f0dfc7}
+.card:nth-child(2){background:#fff4e6}.card:nth-child(3){background:#fff7ed}
+.card-visual,.card:nth-child(2) .card-visual,.card:nth-child(3) .card-visual{background:linear-gradient(145deg,#ffe5bd,#edb5a2);box-shadow:0 14px 20px #70425716,inset -7px -7px 12px #70425712}
+.story-art{background:radial-gradient(circle at 60% 45%,#ffe7ad,#f6c9a6 53%,#f0c9c3 88%)}.moon{background:#fff1c6;box-shadow:0 0 85px #fff1c688}
+.poem{background:linear-gradient(135deg,#f9e4ca,#f6d8cc 55%,#f5e9d5)}.poem h2{color:#713b3b}.note-signoff{color:#a75058}body.night .note-signoff{color:#ffd4b3}
+.footer{border-top-color:#b9589125;color:var(--muted)}
+.dream-counter{background:linear-gradient(125deg,#fff1d2,#ffe9df 58%,#fff7e8);border-color:#f0d7a8}
+body.night .dream-counter{background:linear-gradient(125deg,#4a3b32,#4a3535 58%,#403632);border-color:#74564a}
+.dream-counter .eyebrow,.guestbook-heading .eyebrow{color:#a45259}
+.odometer-card{border-color:#f1ce77;background:linear-gradient(145deg,#9f633a,#754632);color:#fff7df;box-shadow:inset 0 0 0 2px #ffffff20,0 9px 20px #72538524}
+.odometer-caption{color:#ffe7ad}.odometer{color:#fff7df;text-shadow:0 0 10px #ffd87980}.odometer-digit{background:linear-gradient(90deg,#503323,#805130 48%,#503323);box-shadow:inset 0 1px 2px #21182f}.odometer-comma{color:#ffe7ad}.odometer-sparkle{color:#ffd879}
+.guestbook-card{border-color:#f3c8af;background:linear-gradient(150deg,#fffdf7 0%,#fff5ed 65%,#fff8e8 100%)}
+body.night .guestbook-card{background:linear-gradient(150deg,#3e302f,#383136);border-color:#805550}
+.guestbook-stamp{background:linear-gradient(145deg,#ffe5a6,#f4b5a4);color:#a45259;box-shadow:inset 0 -4px 0 #e3bf9b}
+.guestbook-heading h2{color:#a45259}body.night .guestbook-heading h2{color:#ffd4b3}
+.guest-form{border-color:#f1d4bd;background:linear-gradient(135deg,#fffaf0,#fff5ef)}body.night .guest-form{background:#3b3030;border-color:#72504b}
+.guest-form label{color:#654b3d}.guest-form label>span:first-child{color:#a18a79}
+.guest-form input,.guest-form textarea,.guest-form .wish-type-select{border-color:#efc3ad;color:#514039}
+.guest-form input:focus,.guest-form textarea:focus,.guest-form .wish-type-select:focus{border-color:#cf7880;box-shadow:0 0 0 4px #e9949a22}
+body.night .guest-form input,body.night .guest-form textarea,body.night .guest-form .wish-type-select{background:#302a29;color:#fff1df;border-color:#795650}
+.guest-submit{background:linear-gradient(100deg,#d96f78,#bd6871);box-shadow:0 7px 0 #e8c1a8,0 12px 22px #d178a029}
+.guest-submit:hover{box-shadow:0 9px 0 #e8c1a8,0 15px 25px #d178a035}
+.dream-wall-top h3{color:#a45259}.guestbook-mode{border-color:#efc3ad;background:#fff4ea;color:#8b4b50}
+body.night .guestbook-mode{background:#493838;border-color:#795650;color:#f7d6c3}
+.wish-note,.wish-note:nth-child(3n+2),.wish-note:nth-child(3n){background:linear-gradient(145deg,#fff2e6,#fffdf8);border-color:#efcfb5}.wish-note:nth-child(3n+2){background:linear-gradient(145deg,#fff0eb,#fffdf8)}.wish-note:nth-child(3n){background:linear-gradient(145deg,#fff7dc,#fffdf8)}
+.wish-note p{color:#59453c}.wish-note footer{color:#9a5a61}.wish-note .wish-kind,.wish-note:nth-child(3n+2) .wish-kind,.wish-note:nth-child(3n) .wish-kind{background:#ffe8cf;color:#8e4d4c}
+body.night .wish-note,body.night .wish-note:nth-child(3n+2),body.night .wish-note:nth-child(3n){background:#403435;border-color:#74504f}body.night .wish-note p{color:#fff0e7}body.night .wish-note footer{color:#f0bfc0}
+.empty-wishes{border-color:#edcdb8;background:#fff8ed}
+#mochiCanvas{transition:filter .5s ease}body.night #mochiCanvas{filter:saturate(.86) brightness(.88)}
+@media(prefers-reduced-motion:reduce){#mochiCanvas{transition:none}}
+</style><style>
+.dream-delivery-map{margin:32px 0 0;padding:24px clamp(16px,3vw,32px) 18px;border:1px solid #edcfaa;border-radius:28px;background:linear-gradient(120deg,#fff9e9,#fff0e7 58%,#fff8df);box-shadow:0 16px 44px #875b3212;overflow:hidden}
+.delivery-map-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}.delivery-map-heading h3{margin:8px 0 0;color:#713b3b;font:600 clamp(23px,3vw,31px)/1.1 Fraunces,serif;letter-spacing:-.03em}.delivery-map-status{flex:none;padding:8px 12px;border-radius:99px;background:#ffe7b0;color:#80512f;font-size:11px;font-weight:800}
+.delivery-map-svg{display:block;width:100%;height:auto;min-height:140px;margin:4px 0 -2px;overflow:visible}.route-track,.delivery-route{fill:none;stroke-linecap:round;stroke-linejoin:round}.route-track{stroke:#e9d6bf;stroke-width:8;stroke-dasharray:2 15}.delivery-route{stroke:url(#deliveryGradient);stroke-width:5;stroke-dasharray:1;stroke-dashoffset:1;filter:drop-shadow(0 2px 4px #d58f4a55)}
+.route-stop circle{fill:#fff9e9;stroke:#d89f55;stroke-width:4}.route-stop text{fill:#765344;font:600 13px 'DM Sans',sans-serif}.delivery-courier{transition:transform .18s linear}.delivery-courier circle{fill:#fff5d7;stroke:#e9a96d;stroke-width:2;filter:drop-shadow(0 4px 5px #9a624444)}.delivery-courier text{fill:#c76b70;font:800 19px 'DM Sans',sans-serif}
+body.night .dream-delivery-map{background:linear-gradient(120deg,#403632,#493735 58%,#454032);border-color:#78564a}.delivery-map-heading h3{color:#713b3b}body.night .delivery-map-heading h3{color:#ffe0c4}body.night .delivery-map-status{background:#594735;color:#ffe5b5}body.night .route-track{stroke:#725b50}body.night .route-stop text{fill:#f2d5bc}
+.dream-delivery-map figcaption{color:var(--muted);font-size:12px;line-height:1.6;text-align:center}
+@media(max-width:600px){.dream-delivery-map{padding:18px 12px 14px;border-radius:22px}.delivery-map-heading{align-items:flex-start}.delivery-map-status{font-size:10px;padding:7px 9px}.delivery-map-svg{min-height:100px}.route-stop text{font-size:16px}}
+.poem.shell{margin-left:auto;margin-right:auto}
+</style><style>.story-pip-night{display:none!important}body.night #story .story-pip-day{display:none!important}body.night #story .story-pip-night{display:block!important}body.night #story .story-art{background:transparent!important;padding:0!important;box-shadow:none!important;border:0!important}body.night #story .story-pip-night{width:100%!important;height:100%!important;max-width:100%!important;object-fit:contain;border-radius:0!important;filter:brightness(1.12) saturate(.92)!important;mix-blend-mode:screen}.twilight-star{display:none!important}body.night #scene>.halo{display:none!important;opacity:0!important}body.night #scene>.stars{display:block!important;color:#cbd5ee}body.night #scene>.stars .star{background:#cbd5ee!important;filter:drop-shadow(0 0 8px #cbd5ee90);animation:twinkle 3s ease-in-out infinite!important}body.night #scene>.stars .twilight-star{display:block!important}body.night #scene>.stars .twilight-star:nth-child(5){left:10%;top:38%;width:11px;height:11px}body.night #scene>.stars .twilight-star:nth-child(6){left:34%;top:14%;width:8px;height:8px}body.night #scene>.stars .twilight-star:nth-child(7){right:9%;top:39%;width:12px;height:12px}body.night #scene>.stars .twilight-star:nth-child(8){right:31%;bottom:14%;width:8px;height:8px}</style><link rel="stylesheet" href="assets/site-route.css?v=20261019-route-theme"><style>
+.mochi-chat-toggle{position:fixed;z-index:1002;left:var(--mochi-chat-left,calc(50% + 230px));top:var(--mochi-chat-top,calc(100vh - 52px));border:1px solid #d88aa0;border-radius:999px;background:linear-gradient(135deg,#fff0d4,#f8dce4 58%,#efc8d4);color:#815264;padding:9px 13px;font:700 12px/1.2 'DM Sans',sans-serif;white-space:nowrap;box-shadow:0 5px 15px #9a5d7430;transition:transform .18s,box-shadow .18s}
+.mochi-chat-toggle:hover,.mochi-chat-toggle:focus-visible{transform:translateY(-2px);box-shadow:0 8px 20px #9a5d7440;outline:2px solid #d88aa0;outline-offset:2px}
+@media(max-width:760px){.mochi-chat-toggle{left:auto;top:auto;right:max(14px,env(safe-area-inset-right));bottom:calc(var(--mochi-chat-launch-bottom,110px) + env(safe-area-inset-bottom));z-index:1002;padding:13px 17px;font-size:13px;box-shadow:0 7px 24px #9a5d7440}}
+@media(prefers-reduced-motion:reduce){.mochi-chat-toggle{transition:none}}
+</style></head>
+<body><header class="topbar shell"><a class="brand" href="#home" aria-label="Mochi home"><span class="brand-mark">✦</span> Mochi’s tiny workshop</a><nav class="nav" aria-label="Main navigation"><a href="#about">Meet Mochi</a><a href="#work">Little projects</a><a href="#story">The story</a><a href="#dreams">Dream wall</a><button class="mode" id="mode" aria-label="Switch between sunny and twilight colors">☾ Twilight map</button></nav></header><nav class="site-route" aria-label="Website section navigator"><div class="site-route-heading"><span class="eyebrow">Mochi journey</span><h2>Explore</h2><span class="site-route-current" aria-live="polite">Home</span></div><div class="site-route-track"><svg class="site-route-svg site-route-svg-vertical" viewBox="0 0 120 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false"><defs><linearGradient id="global-route-gradient-v" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dfa153"/><stop offset=".56" stop-color="#d98683"/><stop offset="1" stop-color="#bf7880"/></linearGradient></defs><path class="site-route-future" pathLength="1000" d="M18 30 C45 90 44 145 18 200 S-5 290 22 360 S48 440 22 510 S-4 610 22 680 S50 770 20 840 S-2 920 20 970"/><path class="site-route-completed" pathLength="1" d="M18 30 C45 90 44 145 18 200 S-5 290 22 360 S48 440 22 510 S-4 610 22 680 S50 770 20 840 S-2 920 20 970"/></svg><svg class="site-route-svg site-route-svg-horizontal" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true" focusable="false"><defs><linearGradient id="global-route-gradient-h" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#dfa153"/><stop offset=".56" stop-color="#d98683"/><stop offset="1" stop-color="#bf7880"/></linearGradient></defs><path class="site-route-future" pathLength="1000" d="M60 68 C155 68 167 25 250 25 S345 98 430 66 S522 25 600 45 S695 93 775 65 S900 24 940 40"/><path class="site-route-completed" pathLength="1" d="M60 68 C155 68 167 25 250 25 S345 98 430 66 S522 25 600 45 S695 93 775 65 S900 24 940 40"/></svg><a class="site-route-stop" href="#home" data-label="Home"><span class="site-route-dot" aria-hidden="true"></span><span>Home</span></a><a class="site-route-stop" href="#about" data-label="Meet Mochi"><span class="site-route-dot" aria-hidden="true"></span><span>Meet Mochi</span></a><a class="site-route-stop" href="#work" data-label="Projects"><span class="site-route-dot" aria-hidden="true"></span><span>Projects</span></a><a class="site-route-stop" href="#story" data-label="Story"><span class="site-route-dot" aria-hidden="true"></span><span>Story</span></a><a class="site-route-stop" href="#dreams" data-label="Dream jar"><span class="site-route-dot" aria-hidden="true"></span><span>Dream jar</span></a><a class="site-route-stop" href="#epilogue" data-label="Mochi note"><span class="site-route-dot" aria-hidden="true"></span><span>Mochi note</span></a><a class="site-route-stop" href="#footer" data-label="Footer"><span class="site-route-dot" aria-hidden="true"></span><span>End</span></a><span class="site-route-courier" aria-hidden="true">✦</span></div></nav>
+<main id="home"><section class="hero shell"><div><span class="eyebrow">A pocket workshop for the road</span><h1>Small comforts.<br><span>Long adventures.</span></h1><p class="lead">Hello, explorer. I’m Mochi, your Pocket Artificer and Starlight Craftsman. While you map the unknown, I turn fallen stardust, river glass, and ancient wood into tiny tools that make the journey feel kinder.</p><div class="actions"><a class="primary" href="#work">See what I’ve made <span aria-hidden="true">↗</span></a><a class="secondary" href="#story">Our story</a></div><p class="tiny-note">Master Miniaturist · Comfort Artisan · Your pocket-sized partner</p></div><div class="scene" id="scene" aria-label="Mochi, a round baby hamster artificer with a compass and a satchel of tiny inventions"><div class="halo"></div><div class="stars"><span class="star">✦</span><span class="star">✧</span><span class="star">✦</span><span class="star">✧</span><span class="star twilight-star">✦</span><span class="star twilight-star">✦</span><span class="star twilight-star">✧</span><span class="star twilight-star">✦</span></div><div class="cloud"></div><div class="platform" aria-hidden="true"></div><div class="hero-3d" id="character"><img class="hero-reference" src="assets/mochi-poster.webp" width="600" height="578" alt="" aria-hidden="true" fetchpriority="high"><canvas id="mochiCanvas" aria-label="Interactive 3D Mochi. Drag to rotate and scroll to zoom. The model changes with Sunny or Twilight map mode." tabindex="0"></canvas><span class="model-hint">Drag Mochi to turn · Scroll to zoom</span></div><div class="character legacy-character"><div class="tail"></div><div class="bodyfur"><div class="belly"></div></div><div class="head"><div class="ear left"></div><div class="ear right"></div><div class="mask"></div><div class="mask right"></div><div class="eye" id="eye1"></div><div class="eye right" id="eye2"></div><div class="cheek"></div><div class="cheek right"></div><div class="muzzle"></div><div class="nose"></div><div class="smile">⌣</div><div class="cap"></div><span class="capstar">✦</span></div><div class="scarf"></div><div class="lantern"></div></div><div class="badge"><b>Workshop status</b>one more tiny wonder ✦</div></div></section>
+<section class="section shell" id="about"><div class="section-head"><span class="eyebrow">A pocket-sized introduction</span><h2>Meet the maker in your pocket</h2><p>You are the Great Explorer and Chief Cartographer. You find the rare things out there; I turn them into smooth, comforting tools for the miles ahead. Together, we make a good team.</p></div><div class="character-sheet" aria-label="Mochi's character sheet"><article class="sheet-item"><span>01 · Name</span><h3>Mochi</h3><p>The pocket-sized craftsman with a heart for travelers.</p></article><article class="sheet-item"><span>02 · What I am</span><h3>A baby hamster</h3><p>Round and velvety-soft, with porcelain-smooth fur, pink cheeks, and a cozy sparkle of stardust.</p></article><article class="sheet-item"><span>03 · What I do</span><h3>Pocket Artificer</h3><p>A master miniaturist and comfort artisan who crafts tiny tools for long journeys.</p></article><article class="sheet-item"><span>04 · My story</span><h3>From the old oak workshop</h3><p>Mochi grew up in a sunlit workshop inside an ancient oak, making gentle things for travelers who felt lost or weary.</p></article><article class="sheet-item sheet-tagline"><span>05 · Tagline</span><h3>“Small comforts, for the longest journeys.”</h3></article></div></section>
+<section class="section shell" id="work"><div class="work"><div class="section-head"><span class="eyebrow">Built for our next expedition</span><h2>Small tools. A kinder way through.</h2><p>You bring back the rare materials. I make them into useful little comforts, ready to travel wherever your map leads.</p></div><div class="cards"><article class="card" tabindex="0" role="button" aria-haspopup="dialog"><span class="index">01 / WAYFINDING</span><div class="card-visual">🧭</div><h3>Compass of Comfort</h3><p>A smooth star compass that points toward a safe shelter, a warm light, or a friendly face.</p></article><article class="card" tabindex="0" role="button" aria-haspopup="dialog"><span class="index">02 / LIGHT</span><div class="card-visual">🕯️</div><h3>Starlight Jar-Lanterns</h3><p>Shatterproof glasslike globes with a soft, flicker-free stardust glow for dark forest paths.</p></article><article class="card" tabindex="0" role="button" aria-haspopup="dialog"><span class="index">03 / SOUND</span><div class="card-visual">🔊</div><h3>Echo Pebbles</h3><p>Polished porcelain stones that play gentle rain or a cozy fireside hush when held.</p></article><article class="card" tabindex="0" role="button" aria-haspopup="dialog"><span class="index">04 / FIELD KIT</span><div class="card-visual">🎒</div><h3>Satchel of Endless Wonders</h3><p>A tiny workshop on the move, packed with brass gears, a miniature telescope, and spring-loaded helpers.</p></article></div></div></section>
+<section class="section shell" id="story"><div class="story-grid"><div class="story-art"><div class="moon"></div><img class="story-pip story-pip-day" src="assets/mochi-cutout.png" loading="lazy" alt="Mochi and his field satchel, ready to make a little invention for the next journey"><img class="story-pip story-pip-night" src="assets/night-mochi.jpeg" loading="lazy" alt="Mochi sleeping beneath the twilight sky with his satchel"><div class="character mini-mallow"><div class="tail"></div><div class="bodyfur"><div class="belly"></div></div><div class="head"><div class="ear left"></div><div class="ear right"></div><div class="mask"></div><div class="mask right"></div><div class="eye"></div><div class="eye right"></div><div class="cheek"></div><div class="cheek right"></div><div class="muzzle"></div><div class="nose"></div><div class="smile">⌣</div><div class="cap"></div><span class="capstar">✦</span></div><div class="scarf"></div></div></div><div class="story-copy"><span class="step" id="step">The old oak · 01</span><h2 id="story-title">A workshop in the branches</h2><p id="story-text">Mochi grew up in a sunlit workshop tucked into an ancient oak. While other makers built heavy tools, he noticed how often travelers just needed a little comfort.</p><div class="dots" aria-label="Story scenes"><button class="active" aria-label="Story scene 1"></button><button aria-label="Story scene 2"></button><button aria-label="Story scene 3"></button></div></div></div><figure class="dream-delivery-map" aria-labelledby="deliveryMapTitle"><div class="delivery-map-heading"><div><span class="eyebrow">A little journey, one scroll at a time</span><h3 id="deliveryMapTitle">Mochi’s Dream Delivery Route</h3></div><span class="delivery-map-status" aria-hidden="true">✦ On the way</span></div><svg class="delivery-map-svg" viewBox="0 0 900 230" aria-hidden="true" focusable="false"><defs><linearGradient id="deliveryGradient" x1="0" x2="1"><stop offset="0" stop-color="#d99a4d"/><stop offset=".52" stop-color="#dc8b78"/><stop offset="1" stop-color="#c56c72"/></linearGradient></defs><path class="route-track" d="M52 153 C128 67 211 58 279 119 S409 186 478 122 S612 65 681 117 S795 164 850 64"/><path id="deliveryRoute" class="delivery-route" pathLength="1" d="M52 153 C128 67 211 58 279 119 S409 186 478 122 S612 65 681 117 S795 164 850 64"/><g class="route-stop"><circle cx="52" cy="153" r="10"/><text x="52" y="194" text-anchor="middle">Old Oak</text></g><g class="route-stop"><circle cx="478" cy="122" r="9"/><text x="478" y="164" text-anchor="middle">River Glass Bend</text></g><g class="route-stop"><circle cx="850" cy="64" r="10"/><text x="850" y="103" text-anchor="middle">Starlight Hollow</text></g><g id="deliveryCourier" class="delivery-courier" transform="translate(52 153)"><circle r="18"/><text y="6" text-anchor="middle">✦</text></g></svg><figcaption>Scroll through Mochi’s story to carry the little starlight parcel from the old oak to its new home.</figcaption></figure></section>
+<section class="section shell" id="storybook"><div class="tier-toy"><header class="toy-head"><span class="eyebrow">A little book for the road</span><h2>Mochi’s pocket storybook</h2><p>Turn the pages to follow one tiny idea from the old oak workshop into a traveler’s lucky charm.</p></header><div class="storybook" id="storybookStage" tabindex="0" aria-label="Storybook. Use arrow keys or swipe to turn pages."><article class="story-page" id="storyPage"><div class="page-static"><span class="page-icon" id="pageIcon" aria-hidden="true">🌳</span><h3 id="pageTitle">A workshop in the branches</h3><p id="pageText">Inside an ancient oak, Mochi gathered river glass, fallen stardust, and a tiny brass gear. He wanted to help a weary explorer feel at home.</p><span class="page-num" id="pageNumber">01 / 03</span></div><div class="page-turn-sheet" id="pageTurnSheet" hidden aria-hidden="true"><div class="page-face page-front" id="pageFront"><span class="page-icon" data-icon>🌳</span><h3 data-title></h3><p data-copy></p><span class="page-num" data-number></span></div><div class="page-face page-back" id="pageBack"><span class="page-icon" data-icon>✨</span><h3 data-title></h3><p data-copy></p><span class="page-num" data-number></span></div></div></article><div class="page-controls"><button id="pagePrev" type="button" aria-label="Previous page" disabled>← Previous</button><output id="pageStatus" aria-live="polite">Page 1 of 3</output><button id="pageNext" type="button" aria-label="Next page">Next →</button></div></div></div></section>
+<section class="section shell" id="dream-game"><div class="tier-toy"><header class="toy-head"><span class="eyebrow">A tiny workshop break</span><h2>Catch the falling dreams</h2><p>Tap stars to score; tap a cloud and the round ends. Stars and clouds fall on the same steady rhythm for 30 seconds.</p></header><div id="dreamBoard" class="dream-board" role="group" aria-label="Dream catching game area"></div><div class="game-line"><span id="gameStatus" role="status" aria-live="polite">Ready when you are, explorer.</span><span>Caught: <output id="gameScore" aria-live="polite">0</output></span><span>Time: <output id="gameTime">30</output>s</span></div><div style="text-align:center"><button class="game-start" id="gameStart" type="button">Start catching ✨</button></div><p style="text-align:center;color:var(--muted);font-size:12px">Keyboard explorers: Tab to a falling star, then press Enter or Space.</p></div></section>
+
+<section class="section shell dreambook" id="dreams" aria-labelledby="dreambook-title"><div class="dream-counter"><div><span class="eyebrow">The little dispatch desk</span><h2 id="dreambook-title">Workshop visits</h2><p>Your visits to Mochi’s workshop, counted in this browser.</p></div><div class="odometer-card" aria-label="Workshop visits on this browser"><span class="odometer-caption">THIS BROWSER</span><output id="dreamCounter" class="odometer" aria-live="polite" aria-atomic="true">0</output><span class="odometer-sparkle" aria-hidden="true">✦</span></div></div><div class="guestbook-card"><div class="guestbook-heading"><span class="guestbook-stamp" aria-hidden="true">🌟</span><div><span class="eyebrow">A little note from your journey</span><h2>Live Dream Jar Guestbook</h2><p>Leave a sweet wish for Mochi. Your name is optional; your kind words are what matter. ✨</p></div></div><form id="guestForm" class="guest-form"><label>Your explorer name <span>(optional)</span><input id="guestName" name="name" maxlength="24" autocomplete="nickname" placeholder="Your name, if you like…"></label><label>Choose a wish jar<select id="wishType" name="wishType" class="wish-type-select"><option value="Falling Star Wish">⭐ Falling Star Wish</option><option value="Stardust Note">✨ Stardust Note</option><option value="Cozy Thought">💗 Cozy Thought</option><option value="Adventure Hope">🧭 Adventure Hope</option></select></label><label class="wish-message-label">Your dream wish<textarea id="dreamWish" name="wish" maxlength="180" required placeholder="Write a sweet note or dream for Mochi…"></textarea><span class="character-count"><span id="wishCount">0</span>/180</span></label><div class="guest-form-bottom"><p id="guestStatus" role="status" aria-live="polite">Your wish jar is saved on this device.</p><button class="primary guest-submit" type="submit">Drop wish in dream jar ✨</button></div></form><div class="dream-wall-top"><div><h3>Dream Jar Gallery</h3><p>Little wishes left by kind explorers</p></div><span class="guestbook-mode" id="guestbookMode">💗 This device</span><span id="wishTotal">0 wishes</span></div><div id="dreamWall" class="dream-wall" aria-live="polite"><p class="empty-wishes">The wall is quiet for now. Leave the very first wish ✨</p></div></div></section><section class="poem shell" id="epilogue"><span class="eyebrow">A note from the mobile workshop</span><h2>One map. Two kinds of courage.</h2><p class="field-note">You find the path through the unknown. I make the small things that help us feel at home along the way. Bring me a new material, and I’ll bring you a new idea.</p><span class="note-signoff">— Mochi, your pocket artificer ✦</span></section></main><footer class="footer shell" id="footer"><span>Made for the long way home · Mochi & the Great Explorer</span><div class="delight-controls" aria-label="Mochi portfolio controls"><label class="sr-only" for="tuneChoice">Choose a lullaby</label><select class="tune-select" id="tuneChoice" aria-label="Choose a lullaby"><option value="starlight">Starlight Cradle</option><option value="drift">Mochi’s Dream Drift</option><option value="windup">Whispering Wind-Up</option></select><button class="sound" id="sound" aria-pressed="false" aria-label="Turn the selected lullaby on">♫ Tune off</button><button class="sound" id="soundMute" aria-pressed="true" aria-label="Unmute all sounds">🔇 Muted</button><button class="sound" id="nightlightToggle" type="button" aria-pressed="false" aria-label="Turn nightlight cursor on">☼ Nightlight off</button><button class="sound" id="chaosMode" aria-pressed="false" aria-label="Turn responsive chaos mode on">✦ Chaos mode off</button><a class="dock-link" href="#home">↑ Top</a></div><button class="mochi-chat-toggle" id="mochiChatToggle" type="button" aria-controls="mochiChatPanel" aria-expanded="false">🐹 Chat with Mochi ✨</button><span class="site-credits"><strong>Artwork &amp; models:</strong> project-supplied Mochi assets (mochi-cutout.png, night-mochi.jpeg, mochi-supplied.glb, mochi-twilight.glb) · <strong>Fonts:</strong> DM Sans &amp; Fraunces via Google Fonts · <strong>3D:</strong> Three.js r128 + GLTFLoader (MIT) · <strong>Audio:</strong> Web Audio API</span><span>Built with a little wonder ✦</span></footer><div class="project-modal" id="projectModal" hidden><div class="project-dialog" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle"><button class="project-close" id="projectClose" aria-label="Close project details">×</button><span class="eyebrow" id="projectModalEyebrow">A pocket-sized project</span><h2 id="projectModalTitle"></h2><p id="projectModalText"></p><div class="project-spec" id="projectModalSpec"></div><span class="project-signoff">Made for one small comfort at a time · Mochi ✦</span></div></div><div class="toast" id="toast" role="status" aria-live="polite">You found Mochi’s hidden stardust! A tiny light for your next journey. ✨</div>
+<script>
+const body=document.body,mode=document.getElementById('mode');mode.addEventListener('click',()=>{body.classList.toggle('night');const night=body.classList.contains('night');mode.textContent=night?'☀ Sunny map':'☾ Twilight map';mode.setAttribute('aria-pressed',String(night));body.dispatchEvent(new Event('mochi:moodchange'))});
+const scene=document.getElementById('scene'),character=document.getElementById('character');
+const scenes=[['The old oak · 01','A workshop in the branches','Mochi grew up in a sunlit workshop tucked into an ancient oak. While other makers built heavy tools, he noticed how often travelers just needed a little comfort.'],['A softer craft · 02','Smooth edges, warm light','He began shaping river glass, ancient wood, and fallen stardust into pocket-sized companions: a compass for finding shelter, a jar that glows, a pebble that remembers rain.'],['Our first expedition · 03','You map. I make.','Now you are the Great Explorer and Chief Cartographer, charting the wild places. Mochi travels in your pocket workshop, turning each discovery into a small tool for the road ahead.']];
+const storyDots=[...document.querySelectorAll('.dots button')];
+const deliveryRoute=document.getElementById('deliveryRoute');
+const deliveryCourier=document.getElementById('deliveryCourier');
+function updateDeliveryMap(progress){
+  if(!deliveryRoute||!deliveryCourier)return;
+  const amount=Math.max(0,Math.min(1,progress));
+  deliveryRoute.style.strokeDashoffset=String(1-amount);
+  const point=deliveryRoute.getPointAtLength(deliveryRoute.getTotalLength()*amount);
+  deliveryCourier.setAttribute('transform',`translate(${point.x.toFixed(1)} ${point.y.toFixed(1)})`);
+}
+let activeStoryScene=-1;
+function setStoryScene(index){
+  const safeIndex=Math.max(0,Math.min(scenes.length-1,index));
+  if(safeIndex===activeStoryScene)return;
+  activeStoryScene=safeIndex;
+  storyDots.forEach((button,i)=>{button.classList.toggle('active',i===safeIndex);if(i===safeIndex)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current')});
+  document.getElementById('step').textContent=scenes[safeIndex][0];
+  document.getElementById('story-title').textContent=scenes[safeIndex][1];
+  document.getElementById('story-text').textContent=scenes[safeIndex][2];
+  updateDeliveryMap((safeIndex+.5)/scenes.length);
+}
+storyDots.forEach((button,index)=>button.addEventListener('click',()=>setStoryScene(index)));
+let storyScrollFrame=0;
+function updateStoryFromScroll(){
+  storyScrollFrame=0;
+  const story=document.getElementById('story');
+  const rect=story.getBoundingClientRect();
+  if(rect.bottom<0||rect.top>window.innerHeight)return;
+  const progress=Math.max(0,Math.min(0.999,(window.innerHeight-rect.top)/(window.innerHeight+rect.height)));
+  setStoryScene(Math.floor(progress*scenes.length));
+  updateDeliveryMap(progress);
+}
+function requestStoryScrollUpdate(){if(!storyScrollFrame)storyScrollFrame=requestAnimationFrame(updateStoryFromScroll)}
+window.addEventListener('scroll',requestStoryScrollUpdate,{passive:true});
+window.addEventListener('resize',requestStoryScrollUpdate,{passive:true});
+requestStoryScrollUpdate();
+let audioOn=false,ctx=null,lullabyTimer=null,noteIndex=0;
+const sound=document.getElementById('sound'),muteControl=document.getElementById('soundMute'),tuneChoice=document.getElementById('tuneChoice');
+const tuneLibrary={
+  starlight:{notes:[523.25,659.25,783.99,880,783.99,659.25,587.33,659.25,523.25,587.33,659.25,783.99],beat:480,style:'celesta'},
+  drift:{notes:[392,349.23,329.63,293.66,329.63,349.23,392,440],beat:900,style:'piano'},
+  windup:{notes:[659.25,783.99,880,783.99,698.46,783.99,987.77,880],beat:570,style:'windup'}
+};
+function syncTrailButton(){const muted=window.soundMuted;sound.setAttribute('aria-pressed',String(audioOn&&!muted));sound.setAttribute('aria-label',muted?'Selected lullaby is muted; unmute all sounds to play':audioOn?'Turn the selected lullaby off':'Turn the selected lullaby on');sound.textContent=muted?'♫ Muted':audioOn?'♫ Tune on':'♫ Tune off'}
+function syncMuteControl(){const muted=window.soundMuted;muteControl.setAttribute('aria-pressed',String(muted));muteControl.setAttribute('aria-label',muted?'Unmute all sounds':'Mute all sounds');muteControl.textContent=muted?'🔇 Muted':'🔔 Sound on'}
+function tone(freq,startedAt,duration,peak,type='sine'){if(!ctx||window.soundMuted)return;const oscillator=ctx.createOscillator(),gain=ctx.createGain();oscillator.type=type;oscillator.frequency.setValueAtTime(freq,startedAt);gain.gain.setValueAtTime(.0001,startedAt);gain.gain.exponentialRampToValueAtTime(peak,startedAt+.025);gain.gain.exponentialRampToValueAtTime(.0001,startedAt+duration);oscillator.connect(gain);gain.connect(ctx.destination);oscillator.start(startedAt);oscillator.stop(startedAt+duration+.02)}
+function playTuneNote(){if(!ctx||window.soundMuted||!audioOn)return;const tune=tuneLibrary[tuneChoice.value]||tuneLibrary.starlight,index=noteIndex++,frequency=tune.notes[index%tune.notes.length],now=ctx.currentTime;if(tune.style==='celesta'){tone(frequency,now,.52,.04,'sine');tone(frequency*2,now,.34,.007,'sine');if(index%6===0)tone(frequency/2,now,.85,.006,'sine')}else if(tune.style==='piano'){tone(frequency,now,.78,.036,'triangle');tone(frequency*2,now,.42,.004,'sine');tone(frequency/2,now,1.05,.011,'sine');if(index%4===0)tone([130.81,146.83,164.81,196][Math.floor(index/4)%4],now,2.2,.005,'sine')}else{tone(frequency,now,.38,.034,'triangle');tone(frequency*2,now+.1,.48,.007,'sine');tone(frequency*3,now+.16,.32,.0025,'sine');tone(146.83,now,.58,.0018,'sine')}}
+function syncAndStartSelectedTune(){if(!ctx||window.soundMuted||!audioOn)return;clearInterval(lullabyTimer);noteIndex=0;playTuneNote();lullabyTimer=setInterval(playTuneNote,tuneLibrary[tuneChoice.value]?.beat||480)}
+function stopTrailTune(){audioOn=false;clearInterval(lullabyTimer);lullabyTimer=null;if(ctx&&ctx.state==='running')ctx.suspend();syncTrailButton()}
+window.stopTrailTune=stopTrailTune;window.syncTrailButton=syncTrailButton;
+sound.setAttribute('aria-pressed','false');sound.addEventListener('click',()=>{if(window.soundMuted){syncTrailButton();return}if(audioOn){stopTrailTune();return}const AudioContextClass=window.AudioContext||window.webkitAudioContext;if(!AudioContextClass){sound.textContent='♫ No audio';sound.setAttribute('aria-label','Audio unavailable in this browser');return}ctx=ctx||new AudioContextClass();if(ctx.state==='suspended')ctx.resume();audioOn=true;syncAndStartSelectedTune();syncTrailButton()});
+tuneChoice.addEventListener('change',()=>{if(audioOn&&!window.soundMuted)syncAndStartSelectedTune()});
+function chime(){if(window.sfxEnabled&&window.playClickTone)window.playClickTone()}
+const projectDetails=[['Compass of Comfort','A tiny wayfinder for the moments when a map is not enough. Its star needle leans toward the nearest warm shelter, gentle light, or friendly face.','River glass · brass · a pocket-sized promise'],['Starlight Jar-Lanterns','Little sealed globes that hold a steady, soft glow. They help tired explorers find the next safe step without startling the forest awake.','Polished glass · fallen stardust · warm amber light'],['Echo Pebbles','Smooth keepsakes with a quiet rain or fireside sound inside. Squeeze one in your palm when the road feels a little too quiet.','Porcelain · soft sound · made to be held'],['Satchel of Endless Wonders','Mochi’s traveling workbench: tiny gears, a folding telescope, a rolled map, and the little tools needed to fix a small problem on the trail.','Soft leather · brass gears · room for one more idea']];const projectModal=document.getElementById('projectModal'),projectTitle=document.getElementById('projectModalTitle'),projectText=document.getElementById('projectModalText'),projectSpec=document.getElementById('projectModalSpec'),projectClose=document.getElementById('projectClose');let lastProjectCard=null;function openProject(index,card){const data=projectDetails[index];if(!data)return;lastProjectCard=card;document.getElementById('projectModalEyebrow').textContent=`Pocket project · 0${index+1}`;projectTitle.textContent=data[0];projectText.textContent=data[1];projectSpec.textContent=data[2];projectModal.hidden=false;document.body.classList.add('dialog-open');projectClose.focus()}function closeProject(){if(projectModal.hidden)return;projectModal.hidden=true;document.body.classList.remove('dialog-open');if(lastProjectCard)lastProjectCard.focus()}document.querySelectorAll('.card').forEach((card,index)=>{card.addEventListener('click',()=>{chime();openProject(index,card)});card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();chime();openProject(index,card)}})});projectClose.addEventListener('click',closeProject);projectModal.addEventListener('click',event=>{if(event.target===projectModal)closeProject()});document.addEventListener('keydown',event=>{if(event.key==='Escape')closeProject()});
+const toast=document.getElementById('toast'),mochiSecret=document.getElementById('character');let secretTaps=0,secretReset;function revealMochiSecret(){secretTaps=0;clearTimeout(secretReset);toast.classList.add('show');mochiSecret.classList.remove('egg-celebrate');void mochiSecret.offsetWidth;mochiSecret.classList.add('egg-celebrate');setTimeout(()=>mochiSecret.classList.remove('egg-celebrate'),3000);for(let i=0;i<36;i++){const s=document.createElement('span');s.className='spark egg-spark';s.textContent=['✦','♡','✧'][i%3];const col=i%6,row=Math.floor(i/6);s.style.left=(4+col*16+Math.random()*9)+'vw';s.style.top=(4+row*15+Math.random()*8)+'vh';document.body.append(s);setTimeout(()=>s.remove(),2850)}setTimeout(()=>toast.classList.remove('show'),3000)}mochiSecret.addEventListener('click',event=>{if(event.target.closest('.model-hint'))return;secretTaps++;clearTimeout(secretReset);if(secretTaps>=5)revealMochiSecret();else secretReset=setTimeout(()=>{secretTaps=0},1800)});mochiSecret.addEventListener('keydown',event=>{if(event.target.id==='mochiCanvas'&&(event.key==='Enter'||event.key===' ')){event.preventDefault();secretTaps++;clearTimeout(secretReset);if(secretTaps>=5)revealMochiSecret();else secretReset=setTimeout(()=>{secretTaps=0},1800)}});
+</script><script>(()=>{const load=()=>{const script=document.createElement("script");script.src="assets/tier-two-toys.js";document.body.appendChild(script)};if(document.readyState==="complete")setTimeout(load,600);else window.addEventListener("load",()=>setTimeout(load,600),{once:true})})();</script><script>(()=>{const button=document.getElementById("mochiChatToggle");if(!button)return;const rail=document.querySelector(".delight-controls");const sync=()=>{if(!rail)return;const r=rail.getBoundingClientRect(),b=button.getBoundingClientRect(),root=document.documentElement;if(innerWidth>760){const side=Math.ceil(r.right+12),fits=side+b.width<=innerWidth-12,left=fits?side:Math.max(12,Math.round((innerWidth-b.width)/2)),top=fits?Math.round(r.top+(r.height-b.height)/2):Math.max(12,Math.round(r.top-b.height-12));root.style.setProperty("--mochi-chat-left",left+"px");root.style.setProperty("--mochi-chat-top",top+"px")}else{root.style.setProperty("--mochi-chat-launch-bottom",Math.max(12,Math.ceil(innerHeight-r.top+10))+"px")}};sync();addEventListener("resize",sync,{passive:true});let loading=false,loaded=false;button.addEventListener("click",()=>{if(loading||loaded)return;loading=true;const script=document.createElement("script");script.src="assets/mochi-companion.js?v=20261019-lazy-chat";script.async=true;script.onload=()=>{loaded=true;button.click()};script.onerror=()=>{loading=false;button.title="Chat could not load. Please refresh and try again."};document.body.appendChild(script)})})();</script><script src="assets/mochi-3d-loader.js?v=20261019-perf-2" defer></script><script src="assets/site-delights.js" defer></script><script>(()=>{let started=false;const section=document.getElementById("dreams");const load=()=>{if(started)return;started=true;const config=document.createElement("script");config.src="assets/guestbook-config.js";config.onload=()=>{const wall=document.createElement("script");wall.src="assets/dream-wall.js?v=20261019-lazy-wall";wall.async=true;document.body.appendChild(wall)};document.body.appendChild(config)};window.addEventListener("scroll",load,{passive:true,once:true});window.addEventListener("hashchange",load,{once:true});if(section)section.addEventListener("pointerenter",load,{once:true})})();</script><script>
+(() => {
+  try { history.scrollRestoration = 'manual'; } catch {}
+  try { if (location.hash) history.replaceState(history.state, '', location.pathname + location.search); } catch {}
+  const backToTop = () => window.scrollTo(0, 0);
+  backToTop();
+  window.addEventListener('pageshow', backToTop, { once: true });
+})();
+</script><script>(()=>{let started=false;const route=document.querySelector(".site-route");const start=()=>{if(started)return;started=true;const script=document.createElement("script");script.src="assets/site-route.js?v=20261019-perf-3";script.async=true;document.body.appendChild(script)};window.addEventListener("scroll",start,{passive:true,once:true});window.addEventListener("hashchange",start,{once:true});if(route)route.addEventListener("pointerenter",start,{once:true})})();</script></body></html>
+
+
+
+
+
+
+
+
+
